@@ -1,3 +1,109 @@
 :root {
   --primaryColor: black;
 }
+* {
+  font-family: arial;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(255, 113, 217);
+  color: rgb(0, 0, 0);
+  align-items: center;
+}
+header div {
+  min-width: 40px;
+  min-height: 40px;
+  margin: 5px;
+  background-image: url("img/renebeathe.jpg");
+  background-size: contain;
+  background-position: center;
+  border-radius: 10em;
+}
+header h1 {
+  margin: 0;
+}
+header nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  right: 0;
+}
+header nav p {
+  margin: 0;
+  padding: 10px;
+}
+header nav p:hover {
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.booking {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.booking-info {
+  display: flex;
+  flex-direction: row;
+}
+.booking-info p {
+  padding-left: 20px;
+  margin: 0;
+  width: 300px;
+  white-space: none;
+}
+.booking-bilde {
+  display: flex;
+  width: 800px;
+  min-width: 250px;
+  height: 400px;
+  background-image: url("img/renebeathe.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.calender {
+  background-color: rgb(223, 223, 223);
+}
+.calender th {
+  background-color: rgb(63, 63, 63);
+  color: white;
+}
+.calender td,
+th {
+  text-align: center;
+  padding: 15px;
+  margin: 0;
+}
+.booking-contact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 70em;
+  justify-content: center;
+}
+.booking-contactform {
+  background-color: rgb(223, 223, 223);
+  padding: 20px;
+}
+.booking-contactform form h1 {
+  margin: 0;
+}
+.booking-contactform form button {
+  background-color: rgb(30, 136, 44);
+  color: white;
+  font-weight: bold;
+  border: 0;
+  border-radius: 0.2em;
+  padding: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+.booking-contactform form button:hover {
+  cursor: pointer;
+  background-color: rgb(25, 157, 43);
+}

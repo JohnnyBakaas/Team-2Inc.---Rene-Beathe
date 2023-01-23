@@ -1,31 +1,49 @@
+"use strict";
+
 const view = () => {
-  let htmlOut = "";
-  htmlOut += makeHeader();
-  // bytt ut med switch case greier
-  if (model.app.state == "homePage") htmlOut += makeHomePage();
+  let htmlOut = makeHeader();
+
+  switch (model.app.state) {
+    case "homePage":
+      htmlOut += makeHomePage();
+      break;
+    case "aboutMeView":
+      htmlOut += aboutMeView();
+      break;
+    case "loginView":
+      htmlOut += loginView();
+      break;
+    case "registerView":
+      htmlOut += registerView();
+      break;
+    case "portfolioArticlesView": // Fiks >:|
+      htmlOut += portfolioArticleView();
+      break;
+    case "portfolioColectionView": // Fiks
+      htmlOut += portfolioColectionView();
+      break;
+    case "bookingView":
+      htmlOut += bookingView();
+      break;
+  }
+
   htmlOut += makeFooter();
   document.getElementById("root").innerHTML = htmlOut;
 };
 
 const makeHeader = () => {
   return /*html*/ `
-        <header>
-            <h1>Rene Beathe</h1>
-            <div class="the-hamburgeler">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <nav> 
-                <ul>
-                    <li> Portefølje </li>
-                    <li> Booking </li>
-                    <li> Nettbutikk </li>
-                    <li> Om meg </li>
-                </ul> 
-            </nav>
-        </header>
-    `;
+  <header>
+        <div></div>
+        <h1>René Beathe</h1>
+        <nav>
+            <p onclick="changeCurrentPage('portfolioColectionView')">Portefølje</p>
+            <p onclick="changeCurrentPage('bookingView')">Booking</p>
+            <p>Nettbutikk</p>
+            <p onclick="changeCurrentPage('aboutMeView')">Om meg</p>
+        </nav>
+    </header>
+  `;
 };
 
 const makeFooter = () => {
@@ -67,3 +85,4 @@ const makeHomePage = () => {
         </section>
     `;
 };
+view();

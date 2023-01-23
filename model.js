@@ -1,7 +1,23 @@
+"use strict";
+
 const model = {
   app: {
     state: "homePage",
-    curentUser: null,
+    currentUser: null,
+    article: {
+      title: "Mauertua barnehage",
+      img: "ing/mauertua barnehage.png",
+      content: [
+        { text: "i dette prosjektet..." }, // if(text) => sett inn i p
+        { img: "img/mauertua barnehage.png" }, // if(img) => sett inn img
+        { text: "mer tekst og ting..." },
+        { text: "mer tekst og ting..." },
+        { text: "mer tekst og ting..." },
+        { img: "img/mauertua barnehage.png" },
+      ],
+
+      articleId: 0,
+    },
   },
 
   inputs: {
@@ -16,8 +32,8 @@ const model = {
     },
 
     loginData: {
-      username: "",
-      pasword: "",
+      name: "",
+      password: "",
     },
 
     shoppingFilters: [],
@@ -27,7 +43,7 @@ const model = {
       sirName: "",
       userNam: "",
       email: "",
-      pasword: "",
+      password: "",
       adress: "",
       zipCode: "",
     },
@@ -46,6 +62,7 @@ const model = {
         { text: "mer tekst og ting..." },
         { img: "img/mauertua barnehage.png" },
       ],
+
       articleId: 0,
     },
     {
@@ -65,7 +82,7 @@ const model = {
       img: "img/kurs i matteematikk.png",
       description: "dette er ett flott produkt..",
       category: ["Utdanningsmatreale", "Mattematikk"],
-      storeId: 03456677,
+      storeId: 0,
       price: 24543,
     },
     {
@@ -90,16 +107,20 @@ const model = {
   users: [
     {
       name: "Heine",
+      lastName: "Pizzason",
+      username: "HeinePizzason",
       userId: 0,
-      pasword: "hemmelig",
-      //legg til resten
+      password: "hemmelig",
+      mail: "superCool@hotmail.com",
+      address: "someWhereLane",
+      zipcode: "3870",
       shoppingCart: [],
     },
   ],
 
   orders: [
     {
-      payed: 1000,
+      paid: 1000,
       userId: 0,
       storeIds: [0, 2],
       orderDate: "18.01.2023",
