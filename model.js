@@ -3,7 +3,7 @@
 const model = {
   app: {
     state: "homePage",
-    currentUser: null,
+    currentUser: 1,
     article: {
       title: "Mauertua barnehage",
       img: "ing/mauertua barnehage.png",
@@ -22,31 +22,33 @@ const model = {
 
   inputs: {
     bookingData: {
-      firstName: "",
-      sirName: "",
+      fullName: "",
       email: "",
-      adress: "",
+      address: "",
       zipCode: "",
 
       days: [],
     },
 
-    loginData: {
+    login: {
       name: "",
       password: "",
     },
 
-    shoppingFilters: [],
+    shoppingFilter: "",
 
     registration: {
+      fillMandatory: "",
       firstName: "",
-      sirName: "",
-      userNam: "",
+      surName: "",
+      userName: "",
       email: "",
       password: "",
-      adress: "",
+      address: "",
       zipCode: "",
     },
+
+    currentArticle: 0, //articleId
   },
 
   //data
@@ -79,27 +81,27 @@ const model = {
   storeArticles: [
     {
       title: "Kurs i mattematikk",
-      img: "img/kurs i matteematikk.png",
+      img: "img/renebeathe.jpg",
       description: "dette er ett flott produkt..",
-      category: ["Utdanningsmatreale", "Mattematikk"],
-      storeId: 0,
+      category: ["Utdanningsmateriale", "Matematikk"],
+      articleId: 0,
       price: 24543,
     },
     {
       title: "Kurs i naturfag",
-      img: "img/kurs i naturfag.png",
+      img: "img/renebeathe.jpg",
       description: "dette er ett flott produkt..",
-      category: ["Utdanningsmatreale", "Naturfag"],
-      storeId: 1,
+      category: ["Utdanningsmateriale", "Naturfag"],
+      articleId: 1,
       price: 24543,
     },
     {
       title: "Hettegenser",
-      img: "img/hettegenser.png",
+      img: "img/renebeathe.jpg",
       description: "dette er ett flott produkt..",
       category: ["Hettegenser", "Klær"],
       colors: [{ text: "Svart", css: "black" }],
-      storeId: 2,
+      articleId: 2,
       price: 3999,
     },
   ],
@@ -115,16 +117,25 @@ const model = {
       address: "someWhereLane",
       zipcode: "3870",
       shoppingCart: [],
+      storeOrders: [
+        {
+          orderDate: "18.01.2023",
+          orderNum: 0,
+          articleIds: [0, 2],
+          totalPrice: 1000,
+        },
+      ],
     },
   ],
 
-  orders: [
+  bookingOrders: [
     {
-      paid: 1000,
-      userId: 0,
-      storeIds: [0, 2],
-      orderDate: "18.01.2023",
+      firstName: "",
+      email: "",
+      address: "",
+      zipCode: "",
+      orderNum: 0,
+      days: ["30.1.2023", "31.1.2023"],
     },
   ],
-  openDaysCalender: ["28.01.2023"],
 };

@@ -1,6 +1,7 @@
 :root {
-  --primaryColor: black;
+  --primaryColor: rgb(255, 113, 217);
 }
+
 * {
   font-family: arial;
 }
@@ -11,7 +12,7 @@ body {
 header {
   display: flex;
   flex-direction: row;
-  background-color: rgb(255, 113, 217);
+  background-color: var(--primaryColor);
   color: rgb(0, 0, 0);
   align-items: center;
 }
@@ -41,6 +42,34 @@ header nav p:hover {
   cursor: pointer;
   font-weight: bold;
   text-decoration: underline;
+}
+
+footer {
+  display: flex;
+
+  justify-content: space-around;
+  flex-direction: row;
+  background-color: var(--primaryColor);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+footer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer div article {
+  display: flex;
+  flex-direction: row;
+}
+footer div div {
+  height: 30px;
+  width: 30px;
+}
+footer p,
+footer h2 {
+  margin: 0;
+  padding: 0;
 }
 .booking {
   padding: 30px;
@@ -93,7 +122,7 @@ th {
 .booking-contactform form h1 {
   margin: 0;
 }
-.booking-contactform form button {
+.booking-contactform button {
   background-color: rgb(30, 136, 44);
   color: white;
   font-weight: bold;
@@ -103,7 +132,148 @@ th {
   font-size: 1em;
   width: 100%;
 }
-.booking-contactform form button:hover {
+.booking-contactform button:hover {
   cursor: pointer;
   background-color: rgb(25, 157, 43);
+}
+
+section aside .selected {
+  background-color: red;
+}
+
+.salgsArtikkel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 3px solid rgb(143, 143, 143);
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(194, 194, 194);
+}
+.salgsArtikkel h3 {
+  margin: 0;
+}
+
+.your-orders {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(230, 230, 230);
+  padding: 15px 15px;
+}
+
+.articleViewFocused {
+  padding: 30px;
+}
+.articleViewFocused section {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(213, 213, 213);
+  min-width: 37em;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+}
+.articleViewFocused h1 {
+  text-align: left;
+  margin: 0;
+}
+.articleViewFlex {
+  display: flex;
+  flex-direction: row !important;
+  background-color: red;
+}
+.articleViewFocused section article div {
+  height: 400px;
+  width: 400px;
+  border: 10px solid rgb(172, 172, 172);
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(144, 144, 144);
+}
+.articleBuySection {
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(172, 172, 172);
+  font-size: 1.5em;
+  flex-wrap: nowrap;
+}
+.articleBuySection p,
+h2 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  white-space: nowrap;
+}
+.articleBuySection button {
+  width: 100%;
+  padding: 5px;
+}
+.storeArticleImg {
+  height: 10em;
+  width: 10em;
+  background-size: cover;
+  background-position: center;
+  border: 5px solid gray;
+}
+.articleCollection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.calender {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.calender div {
+  background-color: red;
+}
+
+.calender div div {
+  background-color: red;
+  display: flex;
+}
+
+.calender div div div {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  border-left: 1px solid black;
+}
+
+.calender div div div:first-child {
+  border-left: 0;
+}
+
+.dayColection {
+  display: flex;
+  height: 100px;
+}
+
+.dayColection h3 {
+  width: 100px;
+
+  border-left: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dayColection h3:first-child {
+  border: 0;
 }

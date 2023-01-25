@@ -19,11 +19,20 @@ const view = () => {
     case "portfolioArticlesView": // Fiks >:|
       htmlOut += portfolioArticleView();
       break;
-    case "portfolioColectionView": // Fiks
+    case "portfolioCollectionView": // Fiks
       htmlOut += portfolioColectionView();
       break;
     case "bookingView":
       htmlOut += bookingView();
+      break;
+    case "ecommerceCollectionView":
+      htmlOut += ecommerceColectionView();
+      break;
+    case "ecommerceArticleView":
+      htmlOut += ecommerceArticleView();
+      break;
+    case "yourStoreOrdersView":
+      htmlOut += yourStoreOrdersView();
       break;
   }
 
@@ -37,9 +46,9 @@ const makeHeader = () => {
         <div></div>
         <h1>René Beathe</h1>
         <nav>
-            <p onclick="changeCurrentPage('portfolioColectionView')">Portefølje</p>
+            <p onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
             <p onclick="changeCurrentPage('bookingView')">Booking</p>
-            <p>Nettbutikk</p>
+            <p onclick="changeCurrentPage('ecommerceCollectionView')">Nettbutikk</p>
             <p onclick="changeCurrentPage('aboutMeView')">Om meg</p>
         </nav>
     </header>
@@ -48,19 +57,26 @@ const makeHeader = () => {
 
 const makeFooter = () => {
   return /*html*/ `
-        <footer>
-            <div>
-                legg til sosialemedie greier her
-            </div>
-            <div class="dette-er-ikke-hvordan-man-gjør-det"></div>
-            <div>
-                Kontakt informasjon
-            </div>
-            <div class="dette-er-ikke-hvordan-man-gjør-det"></div>
-            <div>
-                noe annet
-            </div>
-        </footer>
+    <footer>
+        <div>
+            <h2>Sosiale Medier</h2>
+            <article>
+                <div style="background-image: url('img/instagram.svg')"></div>
+                <div style="background-image: url('img/facebook.svg')"></div>
+                <div style="background-image: url('img/twitter.svg')"></div>
+                <div style="background-image: url('img/youtube.svg')"></div>
+            </article>
+        </div>
+        <div>
+            <h2>Kontakt</h2>
+            <p>renebeathehansen@gmail.com</p>
+            <p>telefon: 901 83 482</p>
+        </div>
+        <div>
+            <h2>Annet</h2>
+            <p>Sett inn noe her</p>
+        </div>
+    </footer>
     `;
 };
 

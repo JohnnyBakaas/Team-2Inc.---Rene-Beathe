@@ -16,11 +16,13 @@ const registerMe = () => {
     uname.value == "" ||
     pword.value == ""
   ) {
-    fillMandatory = "Fyll Obligatoriske Felt";
+    model.inputs.registration.fillMandatory = "Fyll Obligatoriske Felt";
     return view();
-  } else {
-    return model.users.push(userInfo) && view();
   }
+
+  model.users.push(userInfo);
+  clearRegister();
+  view();
 };
 
 const findLastUserId = () => {
@@ -29,4 +31,12 @@ const findLastUserId = () => {
     if (model.users[i].userId >= lastId) lastId = model.users[i].userId + 1;
   }
   return lastId;
+};
+const clearRegister = () => {
+  return Object.keys(model.inputs.registration).forEach(
+    (e) => (model.inputs.registration[e] = "")
+  );
+
+  /*return model.inputs.registration.forEach(() =>
+        model.inputs.registration.set("");*/
 };
