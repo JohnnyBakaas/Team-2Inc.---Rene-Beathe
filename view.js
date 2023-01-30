@@ -2,40 +2,45 @@
 
 const view = () => {
   let htmlOut = makeHeader();
-  switch (model.app.state) {
-    case "homePage":
-      htmlOut += makeHomePage();
-      break;
-    case "aboutMeView":
-      htmlOut += aboutMeView();
-      break;
-    case "loginView":
-      htmlOut += loginView();
-      break;
-    case "registerView":
-      htmlOut += registerView();
-      break;
-    case "portfolioArticlesView": // Fiks >:|
-      htmlOut += portfolioArticleView();
-      break;
-    case "portfolioCollectionView": // Fiks
-      htmlOut += portfolioColectionView();
-      break;
-    case "bookingView":
-      htmlOut += bookingView();
-      break;
-    case "ecommerceCollectionView":
-      htmlOut += ecommerceColectionView();
-      break;
-    case "ecommerceArticleView":
-      htmlOut += ecommerceArticleView();
-      break;
-    case "yourStoreOrdersView":
-      htmlOut += yourStoreOrdersView();
-      break;
-    case "yourShoppingCartView":
-      htmlOut += yourShoppingCartView();
-      break;
+
+  if (model.app.article) {
+    htmlOut += portfolioArticlesView();
+  } else {
+    switch (model.app.state) {
+      case "homePage":
+        htmlOut += makeHomePage();
+        break;
+      case "aboutMeView":
+        htmlOut += aboutMeView();
+        break;
+      case "loginView":
+        htmlOut += loginView();
+        break;
+      case "registerView":
+        htmlOut += registerView();
+        break;
+      case "portfolioArticlesView": // Fiks >:|
+        htmlOut += portfolioArticleView();
+        break;
+      case "portfolioCollectionView": // Fiks
+        htmlOut += portfolioColectionView();
+        break;
+      case "bookingView":
+        htmlOut += bookingView();
+        break;
+      case "ecommerceCollectionView":
+        htmlOut += ecommerceColectionView();
+        break;
+      case "ecommerceArticleView":
+        htmlOut += ecommerceArticleView();
+        break;
+      case "yourStoreOrdersView":
+        htmlOut += yourStoreOrdersView();
+        break;
+      case "yourShoppingCartView":
+        htmlOut += yourShoppingCartView();
+        break;
+    }
   }
 
   htmlOut += makeFooter();

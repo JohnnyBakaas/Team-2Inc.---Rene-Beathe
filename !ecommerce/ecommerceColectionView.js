@@ -48,7 +48,7 @@ const makeStoreArticles = () => {
   if (model.inputs.shoppingFilter === "") {
     model.storeArticles.forEach((e) => {
       storeArticles += `
-            <article class="salgsArtikkel" onclick="openArticle('${e.articleId}')">
+            <article class="salgsArtikkel" onclick="openArticle(${e.articleId})">
             <div class="storeArticleImg" style="background-image: url('${e.img}')"></div>
             <h3> ${e.title} </h3>
             </article>
