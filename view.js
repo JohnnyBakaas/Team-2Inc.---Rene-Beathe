@@ -2,7 +2,6 @@
 
 const view = () => {
   let htmlOut = makeHeader();
-
   switch (model.app.state) {
     case "homePage":
       htmlOut += makeHomePage();
@@ -34,6 +33,9 @@ const view = () => {
     case "yourStoreOrdersView":
       htmlOut += yourStoreOrdersView();
       break;
+    case "yourShoppingCartView":
+      htmlOut += yourShoppingCartView();
+      break;
   }
 
   htmlOut += makeFooter();
@@ -44,7 +46,7 @@ const makeHeader = () => {
   return /*html*/ `
   <header>
         <div></div>
-        <h1>René Beathe</h1>
+        <h1 onclick="changeCurrentPage('homePage')">René Beathe</h1>
         <nav>
             <p onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
             <p onclick="changeCurrentPage('bookingView')">Booking</p>
@@ -69,7 +71,7 @@ const makeFooter = () => {
         </div>
         <div>
             <h2>Kontakt</h2>
-            <p>renebeathehansen@gmail.com</p>
+            <p class="hover" onclick="navigator.clipboard.writeText(this.innerHTML);"><span class="copied">copied to clipboard</span>renebeathehansen@gmail.com</p>
             <p>telefon: 901 83 482</p>
         </div>
         <div>
@@ -80,25 +82,4 @@ const makeFooter = () => {
     `;
 };
 
-const makeHomePage = () => {
-  return /*html*/ `
-        <section>
-            <img h-ref="img/#" alt="Forside bilde">
-            <section>
-                <h2> Allmenfag for eller noe </h2>
-                <p>
-                    Masse tekst om hvor fantastisk Rene Beathe er 
-                    eller noe c2a aktig
-                </p>
-            </section>
-        </section>
-
-        <section>
-            <div class="post-it-note">
-                <h2> Om meg </h2>
-                <p> text content </p>
-            </div>
-        </section>
-    `;
-};
 view();

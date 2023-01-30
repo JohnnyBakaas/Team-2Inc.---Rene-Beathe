@@ -17,15 +17,28 @@ const ecommerceColectionView = () => {
 };
 
 const makeStoreNavbar = () => {
-  let navbarHTML = `
+  let navbarHTML = "";
+
+  if (model.app.currentUser) {
+    navbarHTML += `
   <section>
         <nav>
-            <button> Handlevogn </button>
+            <button onclick="changeCurrentPage('yourShoppingCartView')"> Handlevogn </button>
             <button onclick="changeCurrentPage('yourStoreOrdersView')"> Dine bestillinger </button>
-            <button onclick="changeCurrentPage('loginView')"> Logg inn </button>
+            <button onclick="logOut()"> Logg ut </button>
         </nav>
     </section>
   `;
+  } else {
+    navbarHTML += `
+    <section>
+        <nav>
+            <button onclick="changeCurrentPage('loginView')"> Logg inn </button>
+        </nav>
+    </section>
+    `;
+  }
+
   return navbarHTML;
 };
 

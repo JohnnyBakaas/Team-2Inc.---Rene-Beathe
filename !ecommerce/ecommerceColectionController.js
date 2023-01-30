@@ -14,3 +14,8 @@ const openArticle = (id) => {
 
   view();
 };
+
+function logOut() {
+  model.app.currentUser = null;
+  changeCurrentPage("ecommerceCollectionView");
+}

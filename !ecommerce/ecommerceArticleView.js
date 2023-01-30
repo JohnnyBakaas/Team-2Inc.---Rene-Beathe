@@ -6,6 +6,7 @@ const ecommerceArticleView = () => {
         <section style="flex-direction: row">
             <h1>
                 ${model.storeArticles[model.inputs.currentArticle].title}
+                sjekk på filter funksjon
             </h1>
             <br/>
             <button onclick="changeCurrentPage('ecommerceCollectionView')">Gå tilbake</button>
@@ -21,7 +22,9 @@ const ecommerceArticleView = () => {
                 <p>${
                   model.storeArticles[model.inputs.currentArticle].price
                 } kr</p>
-                <button>Kjøp</button>
+                <button onclick="addToShoppingCart(${[
+                  model.inputs.currentArticle,
+                ]})">Legg til i handlevogn</button>
             </article>
         </section>
         <section>

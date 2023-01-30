@@ -43,8 +43,8 @@ const bookingView = () => {
                 </table>
                 <button onclick="contactSubmit()">Send</button>
            </div>
+           </div>
            ${makeCalender()}
-      </div>
     </div>
     `;
 
@@ -102,7 +102,7 @@ const makeCalenderContent = (offset) => {
     }>
       ${i}
     </div>`;
-    if (date.getDay() % 7 == 3) theHTML += "</div> <div>";
+    if (date.getDay() % 7 == 5) theHTML += "</div> <div>";
 
     console.log(date.getDay());
     console.log(date.getDay() % 7);

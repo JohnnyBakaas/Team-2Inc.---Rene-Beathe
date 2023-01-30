@@ -108,11 +108,11 @@ const model = {
 
   users: [
     {
-      name: "Heine",
+      name: "a",
       lastName: "Pizzason",
       username: "HeinePizzason",
-      userId: 0,
-      password: "hemmelig",
+      userId: 1,
+      password: "1",
       mail: "superCool@hotmail.com",
       address: "someWhereLane",
       zipcode: "3870",

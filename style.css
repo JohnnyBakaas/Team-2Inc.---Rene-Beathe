@@ -28,6 +28,11 @@ header div {
 header h1 {
   margin: 0;
 }
+header h1:hover {
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
 header nav {
   position: absolute;
   display: flex;
@@ -235,6 +240,7 @@ h2 {
   justify-content: center;
   align-items: center;
   border: 1px solid black;
+  width: min-content;
 }
 
 .calender div {
@@ -246,13 +252,17 @@ h2 {
   display: flex;
 }
 
+.calender div div:first-child {
+  flex-direction: row-reverse;
+}
+
 .calender div div div {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  font-size: 25px;
   border-left: 1px solid black;
 }
 
@@ -262,12 +272,14 @@ h2 {
 
 .dayColection {
   display: flex;
-  height: 100px;
+  justify-content: space-between;
+  width: 100%;
+  height: 50;
 }
 
 .dayColection h3 {
-  width: 100px;
-
+  width: 50;
+  font-size: 13px;
   border-left: 1px solid black;
   display: flex;
   justify-content: center;
@@ -276,4 +288,77 @@ h2 {
 
 .dayColection h3:first-child {
   border: 0;
+}
+
+.calender div div .selected {
+  background-color: purple;
+}
+.onHoverPlease {
+  color: blue;
+}
+.onHoverPlease:hover {
+  text-decoration: underline;
+}
+.post-it-note-container {
+  display: flex;
+}
+.post-it-note {
+  flex-direction: column;
+  width: 25%;
+  height: 265px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.post-it-note:hover {
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.15);
+  position: relative;
+  left: 25px;
+}
+.note1 {
+  background: linear-gradient(
+    53.65deg,
+    #ea526f 10.36%,
+    rgba(234, 82, 111, 0.61) 57.8%,
+    #279af1 91.82%
+  );
+}
+.note2 {
+  background: linear-gradient(180deg, #f499eb 0%, #ff32ea 100%);
+}
+.note3 {
+  background: linear-gradient(180deg, #ffffc2 0%, #ffff70 100%);
+}
+.note4 {
+  background: linear-gradient(
+    148.71deg,
+    #ea526f 26.89%,
+    #f6b973 78.68%,
+    #ffff76 99.81%
+  );
+}
+
+.hover:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+span.copied {
+  display: none;
+}
+.form-line {
+  display: flex;
+  align-items: center;
+  background-color: #4e8bd5c7;
+  flex-flow: column wrap;
+}
+.form-line input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.flex-column {
+}
+.form-line label {
+  margin: 5px 10px 5px 0;
 }

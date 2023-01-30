@@ -13,7 +13,7 @@ function loginView() {
     </form>
 
     <p>Har du ingen bruker?
-    <span style="color:blue" onclick="changeCurrentPage('registerView')">Klikk her</span>
+    <span class="onHoverPlease" onclick="changeCurrentPage('registerView')">Klikk her</span>
     for å registrere bruker.</p>
 
   </section>
