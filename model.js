@@ -6,7 +6,7 @@ const model = {
     currentUser: 1,
     article: {
       title: "Mauertua barnehage",
-      img: "ing/mauertua barnehage.png",
+      img: "img/mauertua barnehage.png",
       content: [
         { text: "i dette prosjektet..." }, // if(text) => sett inn i p
         { img: "img/mauertua barnehage.png" }, // if(img) => sett inn img
@@ -55,7 +55,7 @@ const model = {
   portfolioArticles: [
     {
       title: "Mauertua barnehage",
-      img: "ing/mauertua barnehage.png",
+      img: "img/mauertua barnehage.png",
       content: [
         { text: "i dette prosjektet..." }, // if(text) => sett inn i p
         { img: "img/mauertua barnehage.png" }, // if(img) => sett inn img
@@ -69,7 +69,7 @@ const model = {
     },
     {
       title: "Annen barnehage",
-      img: "ing/annen barnehage.png",
+      img: "img/annen barnehage.png",
       content: [
         { text: "i dette prosjektet..." },
         { img: "img/annen barnehage.png" },
@@ -78,29 +78,33 @@ const model = {
       articleId: 1,
     },
   ],
-  storeArticles: [
+
+  courseStore: [
     {
       title: "Kurs i mattematikk",
-      img: "img/renebeathe.jpg",
-      description: "dette er ett flott produkt..",
-      category: ["Utdanningsmateriale", "Matematikk"],
-      articleId: 0,
-      price: 24543,
+      img: "",
+      courseId: 1,
+      price: 960,
     },
     {
       title: "Kurs i naturfag",
-      img: "img/renebeathe.jpg",
-      description: "dette er ett flott produkt..",
-      category: ["Utdanningsmateriale", "Naturfag"],
-      articleId: 1,
-      price: 24543,
+      img: "",
+      courseId: 2,
+      price: 850,
     },
+  ],
+
+  // merchStore
+  storeArticles: [
     {
       title: "Hettegenser",
       img: "img/renebeathe.jpg",
       description: "dette er ett flott produkt..",
       category: ["Hettegenser", "Klær"],
-      colors: [{ text: "Svart", css: "black" }],
+      colors: [
+        { text: "Svart", css: "black" },
+        { text: "Rød", css: "red" },
+      ],
       articleId: 2,
       price: 3999,
     },
@@ -125,6 +129,8 @@ const model = {
           totalPrice: 1000,
         },
       ],
+      courseShoppingCart: [],
+      courseOrders: [],
     },
   ],
 

@@ -9,27 +9,21 @@ const addToShoppingCart = (articleIndex) => {
     return obj.userId === model.app.currentUser;
   });
 
-  /*if (
+  if (
     model.users[userIndex].shoppingCart.includes(
       model.storeArticles[articleIndex]
     )
   ) {
-    return increaseQuantity(userIndex);
-  }*/
-
-  // Ikke ferdig ^
+    return test(userIndex);
+  }
 
   model.users[userIndex].shoppingCart.push(model.storeArticles[articleIndex]);
 };
 
-/*function increaseQuantity(index) {
+function test(index) {
   const shoppingCartItemIndex = model.users[index].shoppingCart.findIndex(
     (obj) => {
       return obj.articleId === model.inputs.currentArticle;
     }
   );
-
-  model.users[index].shoppingCart[shoppingCartItemIndex].quantity += 1;
-}*/
-
-// Ikke ferdig ^
+}

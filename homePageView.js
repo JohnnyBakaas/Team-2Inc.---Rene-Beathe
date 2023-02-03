@@ -1,8 +1,8 @@
 const makeHomePage = () => {
   return /*html*/ `
-        <section>
-            <img h-ref="img/#" alt="Forside bilde">
-            <section>
+        <section class="homeMenuScreen">
+            <section class="homePageText">
+            
                 <h2> Allmenfag for eller noe </h2>
                 <p>
                     Masse tekst om hvor fantastisk Rene Beathe er 

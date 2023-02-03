@@ -1,0 +1,12 @@
+.course-parent {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+}
+
+.course-frame {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  padding: 10px;
+}

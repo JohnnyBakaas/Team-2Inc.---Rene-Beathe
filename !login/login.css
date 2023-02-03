@@ -1,0 +1,6 @@
+.onHoverPlease {
+  color: blue;
+}
+.onHoverPlease:hover {
+  text-decoration: underline;
+}

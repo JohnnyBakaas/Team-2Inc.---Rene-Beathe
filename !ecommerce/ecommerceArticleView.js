@@ -6,7 +6,7 @@ const ecommerceArticleView = () => {
         <section style="flex-direction: row">
             <h1>
                 ${model.storeArticles[model.inputs.currentArticle].title}
-                sjekk på filter funksjon
+                
             </h1>
             <br/>
             <button onclick="changeCurrentPage('ecommerceCollectionView')">Gå tilbake</button>
@@ -18,6 +18,13 @@ const ecommerceArticleView = () => {
                 }')"></div>
             </article>
             <article class="articleBuySection">
+                ${
+                  model.storeArticles[model.inputs.currentArticle].colors
+                    ? makeColorSelection(
+                        model.storeArticles[model.inputs.currentArticle].colors
+                      )
+                    : ""
+                }
                 <h2>Pris</h2>
                 <p>${
                   model.storeArticles[model.inputs.currentArticle].price
@@ -35,5 +42,20 @@ const ecommerceArticleView = () => {
     </article>
 
     `;
+  return theHTML;
+};
+
+const makeColorSelection = (colors) => {
+  let theHTML = "";
+  colors.forEach((e) => {
+    theHTML += `
+    <button class="storeColorSelection">
+      <p>${e.text}</p>
+      <div style="background-color:${e.css};" 
+        class="storeColorSelectionSquare">
+      </div>
+    </button>
+    `;
+  });
   return theHTML;
 };

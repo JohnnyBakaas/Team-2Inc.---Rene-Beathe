@@ -4,5 +4,5 @@ const selectPortfolioArticle = (articleId) => {
       model.app.article = x;
     }
   });
-  view();
+  changeCurrentPage("portfolioArticlesView");
 };

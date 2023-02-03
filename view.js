@@ -3,44 +3,43 @@
 const view = () => {
   let htmlOut = makeHeader();
 
-  if (model.app.article) {
-    htmlOut += portfolioArticlesView();
-  } else {
-    switch (model.app.state) {
-      case "homePage":
-        htmlOut += makeHomePage();
-        break;
-      case "aboutMeView":
-        htmlOut += aboutMeView();
-        break;
-      case "loginView":
-        htmlOut += loginView();
-        break;
-      case "registerView":
-        htmlOut += registerView();
-        break;
-      case "portfolioArticlesView": // Fiks >:|
-        htmlOut += portfolioArticleView();
-        break;
-      case "portfolioCollectionView": // Fiks
-        htmlOut += portfolioColectionView();
-        break;
-      case "bookingView":
-        htmlOut += bookingView();
-        break;
-      case "ecommerceCollectionView":
-        htmlOut += ecommerceColectionView();
-        break;
-      case "ecommerceArticleView":
-        htmlOut += ecommerceArticleView();
-        break;
-      case "yourStoreOrdersView":
-        htmlOut += yourStoreOrdersView();
-        break;
-      case "yourShoppingCartView":
-        htmlOut += yourShoppingCartView();
-        break;
-    }
+  switch (model.app.state) {
+    case "homePage":
+      htmlOut += makeHomePage();
+      break;
+    case "aboutMeView":
+      htmlOut += aboutMeView();
+      break;
+    case "loginView":
+      htmlOut += loginView();
+      break;
+    case "registerView":
+      htmlOut += registerView();
+      break;
+    case "portfolioArticlesView":
+      htmlOut += portfolioArticleView();
+      break;
+    case "portfolioCollectionView":
+      htmlOut += portfolioColectionView();
+      break;
+    case "bookingView":
+      htmlOut += bookingView();
+      break;
+    case "ecommerceCollectionView":
+      htmlOut += ecommerceColectionView();
+      break;
+    case "ecommerceArticleView":
+      htmlOut += ecommerceArticleView();
+      break;
+    case "yourStoreOrdersView":
+      htmlOut += yourStoreOrdersView();
+      break;
+    case "yourShoppingCartView":
+      htmlOut += yourShoppingCartView();
+      break;
+    case "courseView":
+      htmlOut += courseView();
+      break;
   }
 
   htmlOut += makeFooter();
@@ -52,12 +51,21 @@ const makeHeader = () => {
   <header>
         <div></div>
         <h1 onclick="changeCurrentPage('homePage')">René Beathe</h1>
+        
         <nav>
             <p onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
             <p onclick="changeCurrentPage('bookingView')">Booking</p>
-            <p onclick="changeCurrentPage('ecommerceCollectionView')">Nettbutikk</p>
+            <p onclick="changeCurrentPage('courseView')">Kurs</p>
+            <p onclick="changeCurrentPage('ecommerceCollectionView')">Merch</p>
             <p onclick="changeCurrentPage('aboutMeView')">Om meg</p>
         </nav>
+
+        <p class="toggle-button">
+          <p class="bar"></p>
+          <p class="bar"></p>
+          <p class="bar"></p>
+        </p>
+
     </header>
   `;
 };
@@ -76,7 +84,7 @@ const makeFooter = () => {
         </div>
         <div>
             <h2>Kontakt</h2>
-            <p class="hover" onclick="navigator.clipboard.writeText(this.innerHTML);"><span class="copied">copied to clipboard</span>renebeathehansen@gmail.com</p>
+            <p class="hover" onclick="navigator.clipboard.writeText(this.innerHTML);">renebeathehansen@gmail.com</p>
             <p>telefon: 901 83 482</p>
         </div>
         <div>

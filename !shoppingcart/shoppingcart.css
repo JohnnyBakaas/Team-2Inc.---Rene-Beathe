@@ -1,0 +1,7 @@
+.your-orders,
+.your-shoppingcart {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(230, 230, 230);
+  padding: 15px 15px;
+}

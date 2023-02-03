@@ -1,0 +1,24 @@
+.form-line {
+  display: flex;
+  align-items: center;
+  background-color: #4e8bd5c7;
+  flex-flow: column wrap;
+}
+.form-line input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.flex-column {
+}
+.form-line label {
+  margin: 5px 10px 5px 0;
+}
+.form-line input[type="button"] {
+  background-color: lightgrey;
+}
+.form-line input[type="button"]:hover {
+  background-color: rgb(255, 113, 217);
+}

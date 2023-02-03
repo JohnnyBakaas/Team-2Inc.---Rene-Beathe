@@ -1,11 +1,11 @@
 "use strict";
-
-const portfolioArticlesView = () => {
+const portfolioArticleView = () => {
   let theHTML = `
-    <section>
-      <h2>${model.app.article.title}</h2>
-      <img src="${model.app.article.img}" alt="${model.app.article.img}">
-    </section>
+    <section class="spesificPortfolioArticle">
+      <section>
+        <h2>${model.app.article.title}</h2>
+        <img src="${model.app.article.img}" alt="${model.app.article.img}">
+      </section>
     `;
 
   for (let i = 0; i < model.app.article.content.length; i++) {
@@ -22,6 +22,7 @@ const portfolioArticlesView = () => {
     }
     theHTML += "</section>";
   }
+  theHTML += "</section>";
 
   return theHTML;
 };
