@@ -20,7 +20,7 @@ function login() {
         name: "",
         password: "",
       };
-      model.app.state = "ecommerceCollectionView";
+      model.app.state = "courseView";
       return view();
     }
 

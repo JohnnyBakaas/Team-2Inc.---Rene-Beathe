@@ -1,6 +1,6 @@
-const selectPortfolioArticle = (articleId) => {
+const selectPortfolioArticle = (inputArticleId) => {
   model.portfolioArticles.find((x) => {
-    if (x.articleId == articleId) {
+    if (x.articleId == inputArticleId) {
       model.app.article = x;
     }
   });

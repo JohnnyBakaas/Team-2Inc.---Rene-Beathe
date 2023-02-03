@@ -105,7 +105,7 @@ const model = {
         { text: "Svart", css: "black" },
         { text: "Rød", css: "red" },
       ],
-      articleId: 2,
+      articleId: 0,
       price: 3999,
     },
   ],

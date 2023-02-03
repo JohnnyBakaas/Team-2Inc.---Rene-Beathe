@@ -138,6 +138,7 @@ footer h2 {
 .hover:hover {
   text-decoration: underline;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .homePageBackground2 {

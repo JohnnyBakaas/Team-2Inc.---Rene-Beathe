@@ -40,6 +40,9 @@ const view = () => {
     case "courseView":
       htmlOut += courseView();
       break;
+    case "courseShoppingCartView":
+      htmlOut += courseShoppingCartView();
+      break;
   }
 
   htmlOut += makeFooter();
@@ -53,11 +56,13 @@ const makeHeader = () => {
         <h1 onclick="changeCurrentPage('homePage')">René Beathe</h1>
         
         <nav>
+        
             <p onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
             <p onclick="changeCurrentPage('bookingView')">Booking</p>
             <p onclick="changeCurrentPage('courseView')">Kurs</p>
             <p onclick="changeCurrentPage('ecommerceCollectionView')">Merch</p>
             <p onclick="changeCurrentPage('aboutMeView')">Om meg</p>
+           
         </nav>
 
         <p class="toggle-button">

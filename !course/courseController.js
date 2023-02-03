@@ -1,6 +1,6 @@
 "use strict";
 
-function addCourseToShoppingCart(courseId) {
+function addToCourseShoppingCart(courseId) {
   if (model.app.currentUser === null) {
     return changeCurrentPage("loginView");
   }
