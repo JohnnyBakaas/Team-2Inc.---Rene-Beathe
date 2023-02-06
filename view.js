@@ -81,10 +81,10 @@ const makeFooter = () => {
         <div>
             <h2>Sosiale Medier</h2>
             <article>
-                <div style="background-image: url('img/instagram.svg')"></div>
-                <div style="background-image: url('img/facebook.svg')"></div>
-                <div style="background-image: url('img/twitter.svg')"></div>
-                <div style="background-image: url('img/youtube.svg')"></div>
+                <div class="hover" style="background-image: url('img/instagram.svg')"></div>
+                <div class="hover" style="background-image: url('img/facebook.svg')"></div>
+                <div class="hover" style="background-image: url('img/twitter.svg')"></div>
+                <div class="hover" style="background-image: url('img/youtube.svg')"></div>
             </article>
         </div>
         <div>

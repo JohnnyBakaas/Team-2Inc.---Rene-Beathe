@@ -82,13 +82,13 @@ const model = {
   courseStore: [
     {
       title: "Kurs i mattematikk",
-      img: "",
+      img: "img/matte.png",
       courseId: 1,
       price: 960,
     },
     {
       title: "Kurs i naturfag",
-      img: "",
+      img: "img/naturfag.png",
       courseId: 2,
       price: 850,
     },

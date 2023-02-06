@@ -97,6 +97,7 @@ footer h2 {
   animation-duration: 7s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  cursor: pointer;
 }
 .note1 {
   background: linear-gradient(
@@ -120,9 +121,15 @@ footer h2 {
     #ffff76 99.81%
   );
 }
+.notePicture {
+  height: 60%;
+  width: 30%;
+  float: right;
+}
 @keyframes note {
   25% {
     rotate: 20deg;
+    box-shadow: 10px 10px 7px rgba(7, 6, 6, 0.7);
   }
   50% {
     rotate: -20deg;

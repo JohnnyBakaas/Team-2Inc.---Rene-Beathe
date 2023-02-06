@@ -2,10 +2,19 @@
 
 function courseShoppingCartView() {
   return `
-    <h1>Kurs handlevogn</h1>
+    <nav class="course-nav-layout">
+      <button onclick="changeCurrentPage('courseView')">Tilbake til kursbutikk</button>
+    </nav>
 
-    ${courseShoppingCart()}
+    <header class="course-header-layout">
+      <h1>Handlevogn</h1>
+    </header>
 
+    <hr>
+
+    <main class="course-shopping-cart-layout">
+      ${courseShoppingCart()}
+    </main>
     `;
 }
 
@@ -19,15 +28,16 @@ function courseShoppingCart() {
   let html = "";
   for (let i = 0; i < user.courseShoppingCart.length; i++) {
     html += `
-    <div>
-        <span>${user.courseShoppingCart[i].title}</span>
+    <article class="course-article-layout">
 
-        <span>${user.courseShoppingCart[i].price}</span>
-
+        <img class="course-img" src="${model.courseStore[i].img}">
+        <h3>${user.courseShoppingCart[i].title}</h3>
+        <span>${user.courseShoppingCart[i].price}kr</span>
         <button onclick="removeCourseFromShoppingCart(${user.courseShoppingCart[i].courseId})">
-            Fjern kurs fra handlekurv
+          FJERN KURS FRA HANDLEVOGN
         </button>
-    </div>
+
+    </article>
     `;
   }
 
