@@ -1,5 +1,5 @@
 section aside .selected {
-  background-color: red;
+  background-color: var(--quinaryColor);
 }
 
 .salgsArtikkel {
@@ -7,13 +7,13 @@ section aside .selected {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  border: 3px solid rgb(143, 143, 143);
+  border: 3px solid var(--secondaryColor);
   width: 200px;
   display: flex;
   flex-direction: row;
   margin: 10px;
   padding: 10px;
-  background-color: rgb(194, 194, 194);
+  background-color: var(--primaryColor);
 }
 .salgsArtikkel h3 {
   margin: 0;
@@ -25,7 +25,7 @@ section aside .selected {
 .articleViewFocused section {
   display: flex;
   flex-direction: column;
-  background-color: rgb(213, 213, 213);
+  background-color: var(--primaryColor);
   min-width: 37em;
   justify-content: center;
   padding: 10px;
@@ -43,10 +43,10 @@ section aside .selected {
 .articleViewFocused section article div {
   height: 400px;
   width: 400px;
-  border: 10px solid rgb(172, 172, 172);
+  border: 10px solid var(--secondaryColor);
   background-size: cover;
   background-position: center;
-  background-color: rgb(144, 144, 144);
+  background-color: var(--tetriaryColor);
 }
 .articleBuySection {
   display: flex;
@@ -54,7 +54,7 @@ section aside .selected {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(172, 172, 172);
+  background-color: var(--tetriaryColor);
   font-size: 1.5em;
   flex-wrap: nowrap;
 }
@@ -73,7 +73,7 @@ section aside .selected {
   width: 10em;
   background-size: cover;
   background-position: center;
-  border: 5px solid gray;
+  border: 5px solid var(--secondaryColor);
 }
 .articleCollection {
   display: flex;

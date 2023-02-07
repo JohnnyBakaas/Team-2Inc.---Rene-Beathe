@@ -53,23 +53,23 @@ const makeHeader = () => {
   return /*html*/ `
   <header>
         <div></div>
-        <h1 onclick="changeCurrentPage('homePage')">René Beathe</h1>
-        
+        <h1 class="hover" onclick="changeCurrentPage('homePage')">René Beathe</h1>
+        <span class="toggle-button" onclick="togleNav()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </span>
         <nav>
         
-            <p onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
-            <p onclick="changeCurrentPage('bookingView')">Booking</p>
-            <p onclick="changeCurrentPage('courseView')">Kurs</p>
-            <p onclick="changeCurrentPage('ecommerceCollectionView')">Merch</p>
-            <p onclick="changeCurrentPage('aboutMeView')">Om meg</p>
+            <p class="hover" onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
+            <p class="hover" onclick="changeCurrentPage('bookingView')">Booking</p>
+            <p class="hover" onclick="changeCurrentPage('courseView')">Kurs</p>
+            <p class="hover" onclick="changeCurrentPage('ecommerceCollectionView')">Merch</p>
+            <p class="hover" onclick="changeCurrentPage('aboutMeView')">Om meg</p>
            
         </nav>
 
-        <p class="toggle-button">
-          <p class="bar"></p>
-          <p class="bar"></p>
-          <p class="bar"></p>
-        </p>
+       
 
     </header>
   `;
@@ -92,10 +92,7 @@ const makeFooter = () => {
             <p class="hover" onclick="navigator.clipboard.writeText(this.innerHTML);">renebeathehansen@gmail.com</p>
             <p>telefon: 901 83 482</p>
         </div>
-        <div>
-            <h2>Annet</h2>
-            <p>Sett inn noe her</p>
-        </div>
+        
     </footer>
     `;
 };

@@ -23,9 +23,10 @@
   display: flex;
   flex-direction: column;
   margin-right: 20px;
-  background: #c1ebff;
+  background: var(--primaryColor);
   border-radius: 5px;
   padding: 10px;
+  border: 5px solid var(--secondaryColor);
 }
 
 .course-article-layout h3 {
@@ -43,11 +44,11 @@
   font-size: 13px;
   padding: 10px 0;
   border: 0;
-  background: #57caff;
+  background: var(--secondaryColor);
 }
 
 .course-article-layout button:hover {
-  background: #30beff;
+  background: var(--quinaryColor);
   cursor: pointer;
 }
 
@@ -55,4 +56,23 @@
   width: 350px;
   height: 250px;
   object-fit: cover;
+  border: 5px solid var(--secondaryColor);
+}
+
+.display-msg-layout {
+  display: flex;
+  justify-content: center;
+}
+
+#displayMsg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  margin-top: 100px;
+  width: fit-content;
+  border: 1px solid gray;
+  background: rgb(194, 194, 194);
+  padding: 10px;
+  border-radius: 10px;
 }

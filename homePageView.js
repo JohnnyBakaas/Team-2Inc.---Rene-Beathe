@@ -3,10 +3,9 @@ const makeHomePage = () => {
         <section class="homeMenuScreen">
             <section class="homePageText">
             
-                <h2> Allmenfag for eller noe </h2>
+                <h2> Realfag er gøy engasjerende og vakert. </h2>
                 <p>
-                    Masse tekst om hvor fantastisk Rene Beathe er 
-                    eller noe c2a aktig
+                    Den røde tråden I alt vi gjør. Det starter I oss selv.
                 </p>
             </section>
         </section>

@@ -1,7 +1,13 @@
 :root {
-  --primaryColor: rgb(255, 113, 217);
+  --primaryColor: rgb(255, 209, 102);
+  --secondaryColor: rgb(239, 71, 111);
+  --tetriaryColor: #f69873;
+  --quaternaryColor: rgb(252, 252, 252);
+  --quinaryColor: rgb(6, 214, 160);
 }
-
+button {
+  cursor: pointer;
+}
 * {
   font-family: arial;
 }
@@ -102,13 +108,18 @@ footer h2 {
 .note1 {
   background: linear-gradient(
     53.65deg,
-    #ea526f 10.36%,
+    #e93e5d 10.36%,
     rgba(234, 82, 111, 0.61) 57.8%,
-    #279af1 91.82%
+    #f69873 91.82%
   );
 }
 .note2 {
-  background: linear-gradient(180deg, #f499eb 0%, #ff32ea 100%);
+  background: linear-gradient(
+    148.71deg,
+    #f6b973 78.68%,
+    #ffff76 99.81%,
+    #ea526f 26.89%
+  );
 }
 .note3 {
   background: linear-gradient(180deg, #ffffc2 0%, #ffff70 100%);
@@ -146,6 +157,8 @@ footer h2 {
   text-decoration: underline;
   font-weight: bold;
   cursor: pointer;
+  transition: text-shadow 1s;
+  text-shadow: 1px 1px var(--secondaryColor);
 }
 
 .homePageBackground2 {
@@ -159,9 +172,9 @@ footer h2 {
 .homePageText {
   background-color: rgba(0, 0, 0, 0.568);
   position: absolute !important;
-  top: 40vh;
+  top: 70vh;
   left: 45%;
-  border-radius: 15%;
+  border-radius: 30px;
   border: 5px rgba(0, 0, 0, 0.726);
   color: rgba(255, 255, 255, 0.801) !important;
   height: 20vh;
@@ -170,10 +183,15 @@ footer h2 {
 }
 
 .homeMenuScreen {
-  background-image: url("img/ballong3.jpg");
-  height: 90vh;
+  background-image: url("img/faceShot.jpeg");
+  height: 95vh;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+}
+
+.toggle-button {
+  display: none;
 }
 
 @media (max-width: 630px) {
@@ -202,6 +220,47 @@ footer h2 {
     width: 90%;
   }
 
+  header nav {
+    display: none;
+  }
+
+  .homeMenuScreen {
+    background-image: url("img/ballong3.jpg");
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .homePageText {
+    background-color: rgba(0, 0, 0, 0.568);
+    position: absolute !important;
+    top: 40vh;
+    left: 45%;
+    border-radius: 30px;
+    border: 5px rgba(0, 0, 0, 0.726);
+    color: rgba(255, 255, 255, 0.801) !important;
+    height: 20vh;
+    width: 50%;
+    text-align: center !important;
+  }
+
+  .toggle-button {
+    display: block;
+    background-image: none;
+  }
+
+  .toggle-button div {
+    min-height: 0px;
+    min-width: 0px;
+    background-image: none;
+    background-color: black;
+    width: 30px;
+    height: 5px;
+    z-index: 100;
+  }
+
   header {
+    justify-content: space-around;
   }
 }

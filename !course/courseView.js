@@ -12,6 +12,15 @@ function courseView() {
 
     <hr>
 
+    <div class="display-msg-layout">
+
+      <div id="displayMsg" style="display:none">
+        <p>Kurset er allerede lagt til i handlevognen</p>
+        <button onclick="closeMessage()">Lukk</button>
+      </div>
+
+    </div>
+
     <main class="course-shop-layout">
       ${allCourses()}
     </main>

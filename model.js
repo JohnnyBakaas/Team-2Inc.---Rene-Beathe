@@ -84,18 +84,42 @@ const model = {
       title: "Kurs i mattematikk",
       img: "img/matte.png",
       courseId: 1,
-      price: 960,
+      price: 9600,
     },
     {
       title: "Kurs i naturfag",
       img: "img/naturfag.png",
       courseId: 2,
-      price: 850,
+      price: 8500,
     },
   ],
 
   // merchStore
   storeArticles: [
+    {
+      title: "Hettegenser",
+      img: "img/renebeathe.jpg",
+      description: "dette er ett flott produkt..",
+      category: ["Hettegenser", "Klær"],
+      colors: [
+        { text: "Svart", css: "black" },
+        { text: "Rød", css: "red" },
+      ],
+      articleId: 0,
+      price: 3999,
+    },
+    {
+      title: "Hettegenser",
+      img: "img/renebeathe.jpg",
+      description: "dette er ett flott produkt..",
+      category: ["Hettegenser", "Klær"],
+      colors: [
+        { text: "Svart", css: "black" },
+        { text: "Rød", css: "red" },
+      ],
+      articleId: 0,
+      price: 3999,
+    },
     {
       title: "Hettegenser",
       img: "img/renebeathe.jpg",

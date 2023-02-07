@@ -7,3 +7,8 @@ const changeCurrentPage = (destination) => {
 const temporarySave = (modelInput, input) => {
   return (modelInput = input);
 };
+
+const togleNav = () => {
+  console.log(document.getElementsByTagName("nav"));
+  document.getElementsByTagName("nav")[0].style.display = "block";
+};

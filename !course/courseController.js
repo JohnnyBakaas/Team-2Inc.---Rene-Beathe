@@ -1,26 +1,34 @@
 "use strict";
 
+function getCourseIdIndex(id) {
+  return model.courseStore.findIndex((obj) => obj.courseId === id);
+}
+
+function getUserIdIndex() {
+  return model.users.findIndex((obj) => obj.userId === model.app.currentUser);
+}
+
+function displayMessage() {
+  document.getElementById("displayMsg").style.display = "flex";
+}
+
+function closeMessage() {
+  document.getElementById("displayMsg").style.display = "none";
+}
+
 function addToCourseShoppingCart(courseId) {
   if (model.app.currentUser === null) {
     return changeCurrentPage("loginView");
   }
 
-  const courseIdIndex = model.courseStore.findIndex((obj) => {
-    return obj.courseId === courseId;
-  });
-  const userIdIndex = model.users.findIndex((obj) => {
-    return obj.userId === model.app.currentUser;
-  });
+  const courseIdIndex = getCourseIdIndex(courseId);
+  const userIdIndex = getUserIdIndex();
+  const user = model.users[userIdIndex];
+  const courseArticle = model.courseStore[courseIdIndex];
 
-  if (
-    model.users[userIdIndex].courseShoppingCart.includes(
-      model.courseStore[courseIdIndex]
-    )
-  ) {
-    return console.log("The course is already added to your cart.");
+  if (user.courseShoppingCart.includes(courseArticle)) {
+    return displayMessage();
   }
 
-  model.users[userIdIndex].courseShoppingCart.push(
-    model.courseStore[courseIdIndex]
-  );
+  user.courseShoppingCart.push(courseArticle);
 }

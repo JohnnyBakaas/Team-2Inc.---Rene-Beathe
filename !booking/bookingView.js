@@ -51,6 +51,41 @@ const bookingView = () => {
   return html;
 };
 
+//Modell fra kalenderGenerator
+/*
+
+{
+  month: 1,
+  dates: [
+    [
+      30, 31, 1, 2,
+       3,  4, 5
+    ],
+    [
+       6,  7,  8, 9,
+      10, 11, 12
+    ],
+    [
+      13, 14, 15, 16,
+      17, 18, 19
+    ],
+    [
+      20, 21, 22, 23,
+      24, 25, 26
+    ],
+    [
+      27, 28, 1, 2,
+       3,  4, 5
+    ],
+    [
+       6,  7,  8, 9,
+      10, 11, 12
+    ]
+  ]
+}
+
+*/
+
 const makeCalender = () => {
   let theHTML = `
   <section class="calender">
@@ -122,4 +157,54 @@ const isBooked = (year, month, day) => {
   });
 
   return out;
+};
+
+const generateCalenderDates = (monthDelta) => {
+  const generatedDay = new Date();
+
+  const monthSetter = generatedDay.getMonth() + monthDelta;
+
+  generatedDay.setMonth(monthSetter);
+  const curentMonthLength = new Date();
+  curentMonthLength.setMonth(monthSetter + 1);
+  curentMonthLength.setDate(0);
+
+  const kalenderData = [[], [], [], [], [], []];
+
+  const firstDay = new Date();
+  firstDay.setMonth(monthSetter);
+  firstDay.setDate(1);
+  if (firstDay.getDay() == 0) {
+    // Hvis første er en søndag
+    generatedDay.setDate(0);
+    let setDay = generatedDay.getDate();
+    kalenderData[0][6] = 1;
+    kalenderData[0][5] = setDay;
+    for (let i = 4; i > -1; i--) {
+      kalenderData[0][i] = kalenderData[0][i + 1] - 1;
+    }
+  } else {
+    // Alle andre dager
+    kalenderData[0][firstDay.getDay() - 1] = 1;
+    generatedDay.setDate(0);
+    let setDay = generatedDay.getDate();
+    for (let i = firstDay.getDay() - 2; i > -1; i--) {
+      kalenderData[0][i] = setDay;
+      setDay--;
+    }
+  }
+
+  let nextNumber = 1;
+  for (let i = 0; i < kalenderData.length; i++) {
+    while (kalenderData[i].length < 7) {
+      if (nextNumber == curentMonthLength.getDate()) nextNumber = 0;
+      nextNumber++;
+      kalenderData[i].push(nextNumber);
+    }
+  }
+
+  return {
+    month: monthSetter,
+    dates: kalenderData,
+  };
 };

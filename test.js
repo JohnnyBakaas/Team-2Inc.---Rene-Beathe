@@ -1,4 +1,4 @@
-const generateDayStuf = (monthDelta) => {
+const generateCalenderDates = (monthDelta) => {
   const generatedDay = new Date();
 
   const monthSetter = generatedDay.getMonth() + monthDelta;
@@ -13,13 +13,22 @@ const generateDayStuf = (monthDelta) => {
   const firstDay = new Date();
   firstDay.setMonth(monthSetter);
   firstDay.setDate(1);
-  kalenderData[0][firstDay.getDay() - 1] = 1;
-
-  generatedDay.setDate(0);
-  let setDay = generatedDay.getDate();
-  for (let i = firstDay.getDay() - 2; i > -1; i--) {
-    kalenderData[0][i] = setDay;
-    setDay--;
+  if (firstDay.getDay() == 0) {
+    generatedDay.setDate(0);
+    let setDay = generatedDay.getDate();
+    kalenderData[0][6] = 1;
+    kalenderData[0][5] = setDay;
+    for (let i = 4; i > -1; i--) {
+      kalenderData[0][i] = kalenderData[0][i + 1] - 1;
+    }
+  } else {
+    kalenderData[0][firstDay.getDay() - 1] = 1;
+    generatedDay.setDate(0);
+    let setDay = generatedDay.getDate();
+    for (let i = firstDay.getDay() - 2; i > -1; i--) {
+      kalenderData[0][i] = setDay;
+      setDay--;
+    }
   }
 
   let nextNumber = 1;
@@ -36,5 +45,3 @@ const generateDayStuf = (monthDelta) => {
     dates: kalenderData,
   };
 };
-
-console.log(generateDayStuf(0));
