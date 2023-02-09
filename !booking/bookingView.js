@@ -20,7 +20,13 @@ const bookingView = () => {
       </div>
       
       <div class="booking-contact">
-      <div id="calendar" class="calendar"> <span> </span> </div>
+           <div id="calenderDiv">
+              ${makeCalender()}
+              <div class="calenderButtons">
+                 <button onclick="bookingChangeCalenderMonth(0)">Forrige måned</button>
+                 <button onclick="bookingChangeCalenderMonth(1)">Neste måned</button>
+              </div>
+           </div>
            <div class="booking-contactform">
                 <h1>Kontakt</h1>
                 <table class="booking-contacttable">
@@ -43,8 +49,6 @@ const bookingView = () => {
                 </table>
                 <button onclick="contactSubmit()">Send</button>
            </div>
-           </div>
-           ${makeCalender()}
     </div>
     `;
 
@@ -88,15 +92,57 @@ const bookingView = () => {
 
 const makeCalender = () => {
   let theHTML = `
-  <section class="calender">
-  ${makeDayName()}
-  ${makeCalenderContent()}
-  </section>
+  <table class="calender" cellspacing="0">
+    <tr>
+      <th>Man</th>
+	    <th>Tir</th>
+	    <th>Ons</th>
+	    <th>Tor</th>
+	    <th>Fre</th>
+	    <th>Lør</th>
+	    <th>Søn</th>
+    </tr>
   `;
+
+  let inputMonthDelta = model.inputs.currentMonthDelta;
+  let weekCount = 0;
+  for (
+    let i = 0;
+    i < generateCalenderDates(inputMonthDelta).weeks.length;
+    i++
+  ) {
+    weekCount++;
+    console.log(weekCount);
+    theHTML += `<tr>`;
+    let weekNumber = generateCalenderDates(inputMonthDelta).weeks[i];
+    for (
+      let j = 0;
+      j < generateCalenderDates(inputMonthDelta).weeks[i].length;
+      j++
+    ) {
+      let dayNumber = generateCalenderDates(inputMonthDelta).weeks[i][j];
+
+      if (
+        (dayNumber > 20 && weekCount == 1) ||
+        (dayNumber < 15 && weekCount == 5) ||
+        (dayNumber < 15 && weekCount == 6)
+      ) {
+        theHTML += `<td class="calenderNotThisMonth">${dayNumber}</td>`;
+      } else {
+        theHTML += `<td>${dayNumber}</td>`;
+      }
+
+      console.log(generateCalenderDates(inputMonthDelta).weeks[0]);
+    }
+    theHTML += `</tr>`;
+  }
+
+  theHTML += `</table>`;
 
   return theHTML;
 };
 
+/*
 const makeDayName = () => {
   let theHTML = "";
   const days = [
@@ -159,6 +205,8 @@ const isBooked = (year, month, day) => {
   return out;
 };
 
+*/
+
 const generateCalenderDates = (monthDelta) => {
   const generatedDay = new Date();
 
@@ -205,6 +253,34 @@ const generateCalenderDates = (monthDelta) => {
 
   return {
     month: monthSetter,
-    dates: kalenderData,
+    weeks: kalenderData,
   };
 };
+
+const generateCalender = () => {
+  document.getElementById("calenderDiv").innerHTML = `
+      ${makeCalender()}
+          <div class="calenderButtons">
+              <button onclick="bookingChangeCalenderMonth(0)">Forrige måned</button>
+              <button onclick="bookingChangeCalenderMonth(1)">Neste måned</button>
+          </div>
+  `;
+};
+
+/*
+  generateCalenderDates(0)
+
+  month: 1
+  weeks: [
+    [30,31,1,2,3,4,5],
+    [6,7,8,9,10,11...],
+    [13...],
+    [20...],
+    [27,28,1,2,3,4,5],
+    [6,7,8,9,10,11,12],
+  ]
+
+  button onclick talltetSomTeller++ ->
+  button onclick talltetSomTeller-- <-
+  display array med moth over
+*/

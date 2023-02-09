@@ -5,7 +5,7 @@ function yourShoppingCartView() {
   <section>
     <h1>Din handlevogn</h1>
 
-    ${yourShoppingCart()}
+    ${shoppingCart()}
 
   </section>
   `;
@@ -29,3 +29,26 @@ function yourShoppingCart() {
 
   return html;
 }
+
+const shoppingCart = () => {
+  let total = 0;
+  let html = ``;
+  const userIdIndex = model.users.findIndex((user) => {
+    return user.userId === model.app.currentUser;
+  });
+  for (let i = 0; i < model.users[userIdIndex].shoppingCart.length; i++) {
+    let currentItem = model.users[userIdIndex].shoppingCart[i];
+    model.storeArticles.forEach((e) => {
+      if (e.articleId === currentItem.articleId) {
+        html += `<div>${e.title} ${
+          currentItem.color[0]
+        } <input class="shoppingCartInput" value="${currentItem.quantity}">x${
+          e.price
+        }Kr Pris:${e.price * currentItem.quantity}Kr</div>`;
+        total += e.price * currentItem.quantity;
+      }
+    });
+  }
+  html += `<div>Total Pris ${total}</div>`;
+  return html;
+};

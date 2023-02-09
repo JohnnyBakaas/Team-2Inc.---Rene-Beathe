@@ -5,8 +5,10 @@ const makeHomePage = () => {
             
                 <h2> Realfag er gøy engasjerende og vakert. </h2>
                 <p>
-                    Den røde tråden I alt vi gjør. Det starter I oss selv.
+                    "Den røde tråden I alt vi gjør. Det starter I oss selv."
+                    
                 </p>
+                <p>-René Beathe Hansen</p>
             </section>
         </section>
 

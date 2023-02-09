@@ -8,18 +8,30 @@ const addToShoppingCart = (articleIndex) => {
   const userIndex = model.users.findIndex((obj) => {
     return obj.userId === model.app.currentUser;
   });
-
-  if (
-    model.users[userIndex].shoppingCart.includes(
-      model.storeArticles[articleIndex]
-    )
-  ) {
-    return test(userIndex);
+  if (model.users[userIndex].shoppingCart.length === 0) {
+    return model.users[userIndex].shoppingCart.push({
+      articleId: model.storeArticles[articleIndex].articleId,
+      color: model.inputs.shoppingColor,
+      quantity: 1,
+    });
+  } else {
+    for (let i = 0; i < model.users[userIndex].shoppingCart.length; i++) {
+      if (model.users[userIndex].shoppingCart[i].articleId === articleIndex) {
+        if (
+          model.users[userIndex].shoppingCart[i].color[0] ===
+          model.inputs.shoppingColor[0]
+        ) {
+          return model.users[userIndex].shoppingCart[i].quantity++;
+        }
+      }
+    }
   }
-
-  model.users[userIndex].shoppingCart.push(model.storeArticles[articleIndex]);
+  model.users[userIndex].shoppingCart.push({
+    articleId: model.storeArticles[articleIndex].articleId,
+    color: model.inputs.shoppingColor,
+    quantity: 1,
+  });
 };
-
 function test(index) {
   const shoppingCartItemIndex = model.users[index].shoppingCart.findIndex(
     (obj) => {
@@ -27,3 +39,7 @@ function test(index) {
     }
   );
 }
+
+const shoppingCartColor = (colorName, colorCSS) => {
+  model.inputs.shoppingColor = [colorName, colorCSS];
+};

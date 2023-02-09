@@ -72,6 +72,15 @@ const makeHeader = () => {
        
 
     </header>
+    <nav class="mobileHeader">
+        
+            <p class="hover" onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
+            <p class="hover" onclick="changeCurrentPage('bookingView')">Booking</p>
+            <p class="hover" onclick="changeCurrentPage('courseView')">Kurs</p>
+            <p class="hover" onclick="changeCurrentPage('ecommerceCollectionView')">Merch</p>
+            <p class="hover" onclick="changeCurrentPage('aboutMeView')">Om meg</p>
+           
+        </nav>
   `;
 };
 

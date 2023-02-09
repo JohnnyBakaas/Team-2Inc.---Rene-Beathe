@@ -5,3 +5,6 @@
   background: var(--secondaryColor);
   padding: 15px 15px;
 }
+.shoppingCartInput {
+  width: 2%;
+}

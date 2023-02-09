@@ -18,3 +18,12 @@ const completeBooking = () => {
   };
   console.log(bookinginfo);
 };
+
+const bookingChangeCalenderMonth = (param) => {
+  //param 0 = bakover og alt annet er forover
+  param == 0
+    ? model.inputs.currentMonthDelta--
+    : model.inputs.currentMonthDelta++;
+
+  generateCalender();
+};

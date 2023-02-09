@@ -3,7 +3,7 @@
 function courseShoppingCartView() {
   return `
     <nav class="course-nav-layout">
-      <button onclick="changeCurrentPage('courseView')">Tilbake til kursbutikk</button>
+      <span onclick="changeCurrentPage('courseView')">Tilbake til kurs</span>
     </nav>
 
     <header class="course-header-layout">
@@ -12,25 +12,30 @@ function courseShoppingCartView() {
 
     <hr>
 
-    <main class="course-shopping-cart-layout">
+    <section class="course-shopping-cart-layout">
       ${courseShoppingCart()}
-    </main>
+    </section>
+
+    <section class="course-shopping-cart-total-price">
+      ${totalPrice()}
+    </section>
     `;
 }
 
 function courseShoppingCart() {
-  const userIndex = model.users.findIndex(function (obj) {
-    return obj.userId === model.app.currentUser;
-  });
+  const userIdIndex = getUserIdIndex();
+  const user = model.users[userIdIndex];
 
-  const user = model.users[userIndex];
+  if (user.courseShoppingCart.length === 0) {
+    return "<p>Handlevognen din er tom.</p>";
+  }
 
   let html = "";
   for (let i = 0; i < user.courseShoppingCart.length; i++) {
     html += `
     <article class="course-article-layout">
 
-        <img class="course-img" src="${model.courseStore[i].img}">
+        <img class="course-img" src="${user.courseShoppingCart[i].img}">
         <h3>${user.courseShoppingCart[i].title}</h3>
         <span>${user.courseShoppingCart[i].price}kr</span>
         <button onclick="removeCourseFromShoppingCart(${user.courseShoppingCart[i].courseId})">
@@ -42,4 +47,19 @@ function courseShoppingCart() {
   }
 
   return html;
+}
+
+function totalPrice() {
+  const userIdIndex = getUserIdIndex();
+  const user = model.users[userIdIndex];
+
+  if (user.courseShoppingCart.length === 0) {
+    return "";
+  }
+
+  return `
+      <span>Til sammen</span>
+      <span>kr</span>
+      <button>Fortsett</button>
+      `;
 }

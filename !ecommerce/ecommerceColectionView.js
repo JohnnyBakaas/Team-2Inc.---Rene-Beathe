@@ -1,16 +1,15 @@
 const ecommerceColectionView = () => {
   let theHTML = /*html*/ `
     ${makeStoreNavbar()}
-    <section>
-        <aside>
-            <h2> Filter </h2>
-            ${makeStoreFilters()}
-        </aside>
-    <section>
-    <article class="articleCollection">
+    <section class="ecommerce-section">
+      <aside>
+        <h2> Filter </h2>
+        ${makeStoreFilters()}
+      </aside>
+      <article class="articleCollection">
         ${makeStoreArticles()}
-    </article>
-
+      </article>
+    </section>
     `;
 
   return theHTML;
@@ -50,7 +49,8 @@ const makeStoreArticles = () => {
       storeArticles += `
             <article class="salgsArtikkel" onclick="openArticle(${e.articleId})">
             <div class="storeArticleImg" style="background-image: url('${e.img}')"></div>
-            <h3> ${e.title} </h3>
+            <h4> ${e.title} </h4>
+           <p>Pris:${e.price}Kr</p>
             </article>
             `;
     });
@@ -66,7 +66,8 @@ const makeStoreArticles = () => {
         storeArticles += `
             <article class="salgsArtikkel" onclick="openArticle('${e.articleId}')">
             <div class="storeArticleImg" style="background-image: url('${e.img}')"></div>
-            <h3> ${e.title} </h3>
+            <h4> ${e.title}</h4>
+            <p>Pris:${e.price}Kr</p>
             </article>
         `;
       }

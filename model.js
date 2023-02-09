@@ -36,6 +36,7 @@ const model = {
     },
 
     shoppingFilter: "",
+    shoppingColor: "",
 
     registration: {
       fillMandatory: "",
@@ -49,6 +50,8 @@ const model = {
     },
 
     currentArticle: 0, //articleId
+
+    currentMonthDelta: 0, //for booking side
   },
 
   //data
@@ -81,13 +84,13 @@ const model = {
 
   courseStore: [
     {
-      title: "Kurs i mattematikk",
+      title: "Kurs: ?",
       img: "img/matte.png",
       courseId: 1,
       price: 9600,
     },
     {
-      title: "Kurs i naturfag",
+      title: "Kurs: ?",
       img: "img/naturfag.png",
       courseId: 2,
       price: 8500,
@@ -117,7 +120,7 @@ const model = {
         { text: "Svart", css: "black" },
         { text: "Rød", css: "red" },
       ],
-      articleId: 0,
+      articleId: 1,
       price: 3999,
     },
     {
@@ -129,8 +132,50 @@ const model = {
         { text: "Svart", css: "black" },
         { text: "Rød", css: "red" },
       ],
-      articleId: 0,
+      articleId: 2,
       price: 3999,
+    },
+    {
+      title: "Sko",
+      img: "img/renebeathe.jpg",
+      description: "dette er ett flott produkt..",
+      category: ["Sko", "Klær"],
+      colors: [
+        { text: "Svart", css: "black" },
+        { text: "Rød", css: "red" },
+      ],
+      articleId: 3,
+      price: 6000,
+    },
+    {
+      title: "Hjemmelaget Choco Kake",
+      img: "img/renebeathe.jpg",
+      description: "dette er ett flott produkt..",
+      category: ["Kake", "Matt"],
+      colors: [{ text: "Brun", css: "brown" }],
+      articleId: 4,
+      price: 4550,
+    },
+    {
+      title: "Brownies",
+      img: "img/renebeathe.jpg",
+      description: "dette er ett flott produkt..",
+      category: ["Kake", "Matt"],
+      colors: [{ text: "Brun", css: "brown" }],
+      articleId: 5,
+      price: 4550,
+    },
+    {
+      title: "Realfag Juice",
+      img: "img/renebeathe.jpg",
+      description: "dette er ett flott produkt..",
+      category: ["Drikke", "Matt"],
+      colors: [
+        { text: "Grøn", css: "Green" },
+        { text: "Lila", css: "Purple" },
+      ],
+      articleId: 6,
+      price: 1500,
     },
   ],
 

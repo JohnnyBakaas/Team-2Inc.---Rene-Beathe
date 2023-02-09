@@ -13,6 +13,12 @@
   margin: 15px 0 15px 15px;
 }
 
+.course-nav-layout span:hover {
+  cursor: pointer;
+  margin-left: 1px;
+  text-shadow: 0px 1px;
+}
+
 .course-header-layout {
   background: none;
   pointer-events: none;
@@ -71,8 +77,25 @@
   position: absolute;
   margin-top: 100px;
   width: fit-content;
-  border: 1px solid gray;
-  background: rgb(194, 194, 194);
-  padding: 10px;
-  border-radius: 10px;
+  border: 5px solid var(--secondaryColor);
+  background: var(--primaryColor);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+#displayMsg p {
+  font-size: 22px;
+}
+
+#displayMsg button {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 13px;
+  background: var(--secondaryColor);
+  border: 0;
+  font-weight: 600;
+}
+
+#displayMsg button:hover {
+  background: var(--quinaryColor);
 }

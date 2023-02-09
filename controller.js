@@ -9,6 +9,13 @@ const temporarySave = (modelInput, input) => {
 };
 
 const togleNav = () => {
-  console.log(document.getElementsByTagName("nav"));
-  document.getElementsByTagName("nav")[0].style.display = "block";
+  if (document.getElementsByClassName("mobileHeader")[0].style.display == "")
+    return (document.getElementsByClassName("mobileHeader")[0].style.display =
+      "flex");
+  if (
+    document.getElementsByClassName("mobileHeader")[0].style.display != "none"
+  )
+    return (document.getElementsByClassName("mobileHeader")[0].style.display =
+      "none");
+  document.getElementsByClassName("mobileHeader")[0].style.display = "flex";
 };

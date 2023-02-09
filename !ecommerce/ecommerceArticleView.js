@@ -49,7 +49,7 @@ const makeColorSelection = (colors) => {
   let theHTML = "";
   colors.forEach((e) => {
     theHTML += `
-    <button class="storeColorSelection">
+    <button class="storeColorSelection" onclick="shoppingCartColor('${e.text}', '${e.css}')">
       <p>${e.text}</p>
       <div style="background-color:${e.css};" 
         class="storeColorSelectionSquare">
