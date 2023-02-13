@@ -3,7 +3,7 @@
 function courseShoppingCartView() {
   return `
     <nav class="course-nav-layout">
-      <span onclick="changeCurrentPage('courseView')">Tilbake til kurs</span>
+      <span onclick="changeCurrentPage('courseStoreView')">Tilbake til kurs</span>
     </nav>
 
     <header class="course-header-layout">
@@ -16,8 +16,8 @@ function courseShoppingCartView() {
       ${courseShoppingCart()}
     </section>
 
-    <section class="course-shopping-cart-total-price">
-      ${totalPrice()}
+    <section>
+      ${toCheckout()}
     </section>
     `;
 }
@@ -38,9 +38,9 @@ function courseShoppingCart() {
         <img class="course-img" src="${user.courseShoppingCart[i].img}">
         <h3>${user.courseShoppingCart[i].title}</h3>
         <span>${user.courseShoppingCart[i].price}kr</span>
-        <button onclick="removeCourseFromShoppingCart(${user.courseShoppingCart[i].courseId})">
-          FJERN KURS FRA HANDLEVOGN
-        </button>
+        <span onclick="removeCourseFromShoppingCart(${user.courseShoppingCart[i].courseId})">
+          FJERN
+        </span>
 
     </article>
     `;
@@ -49,7 +49,7 @@ function courseShoppingCart() {
   return html;
 }
 
-function totalPrice() {
+function toCheckout() {
   const userIdIndex = getUserIdIndex();
   const user = model.users[userIdIndex];
 
@@ -58,8 +58,22 @@ function totalPrice() {
   }
 
   return `
-      <span>Til sammen</span>
-      <span>kr</span>
-      <button>Fortsett</button>
-      `;
+    <div class="course-checkout-layout">
+      <span>TIL SAMMEN</span>
+      <span>${getTotalPrice()}kr</span>
+      <button onclick="changeCurrentPage('courseCheckoutView')">FORTSETT</button>
+    </div>
+    `;
+}
+
+function getTotalPrice() {
+  const userIdIndex = getUserIdIndex();
+  const user = model.users[userIdIndex];
+
+  let totalPrice = 0;
+  for (let i = 0; i < user.courseShoppingCart.length; i++) {
+    totalPrice += user.courseShoppingCart[i].price;
+  }
+
+  return totalPrice;
 }

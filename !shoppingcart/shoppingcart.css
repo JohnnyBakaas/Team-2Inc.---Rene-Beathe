@@ -1,10 +1,37 @@
-.your-orders,
-.your-shoppingcart {
+.yourShoppingCart {
   display: flex;
-  justify-content: space-between;
-  background: var(--secondaryColor);
-  padding: 15px 15px;
+  flex-direction: column;
+  margin: 0;
 }
 .shoppingCartInput {
-  width: 2%;
+  width: 1%;
+}
+
+.yourShoppingCart div:nth-child(even) {
+  background: var(--primaryColor);
+  padding: 15px;
+  display: flex;
+}
+.yourShoppingCart div:nth-child(odd) {
+  background: var(--secondaryColor);
+  padding: 15px;
+  display: flex;
+}
+.yourShoppingCart div:last-child {
+  background-color: var(--tetriaryColor);
+  padding: 15px;
+}
+.colorBox {
+  width: 20px !important;
+  height: 20px !important;
+  border: 3px solid rgba(119, 108, 108, 0.733);
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.yourShoppingCart div * {
+  display: flex;
+  margin-left: 5%;
+}
+.yourShoppingCart div {
 }

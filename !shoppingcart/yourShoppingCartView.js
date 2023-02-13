@@ -2,7 +2,7 @@
 
 function yourShoppingCartView() {
   return `
-  <section>
+  <section class="yourShoppingCart">
     <h1>Din handlevogn</h1>
 
     ${shoppingCart()}
@@ -29,7 +29,7 @@ function yourShoppingCart() {
 
   return html;
 }
-
+// convert this to a table, looks ugly now when there is a length difference.
 const shoppingCart = () => {
   let total = 0;
   let html = ``;
@@ -40,15 +40,28 @@ const shoppingCart = () => {
     let currentItem = model.users[userIdIndex].shoppingCart[i];
     model.storeArticles.forEach((e) => {
       if (e.articleId === currentItem.articleId) {
-        html += `<div>${e.title} ${
+        html += `<div id="item${i}"><span>${e.title}</span> <span>Farge:${
           currentItem.color[0]
-        } <input class="shoppingCartInput" value="${currentItem.quantity}">x${
-          e.price
-        }Kr Pris:${e.price * currentItem.quantity}Kr</div>`;
+        }<p class="colorBox" style="background-color:${
+          currentItem.color[1]
+        }"></p></span> <input class="shoppingCartInput" onchange="calculation(${userIdIndex}, ${i}, this.value)" value="${
+          currentItem.quantity
+        }">x${e.price}</span>Kr<span>Pris:${
+          e.price * currentItem.quantity
+        }Kr<button onclick="removeThat(${userIdIndex},${i})">Fjern</button></span></div>`;
         total += e.price * currentItem.quantity;
       }
     });
   }
-  html += `<div>Total Pris ${total}</div>`;
+  html += `<div>Total Pris:${total}Kr<div><button>Check Ut</button></div>`;
   return html;
+};
+function calculation(userIdIndex, i, value) {
+  model.users[userIdIndex].shoppingCart[i].quantity = value;
+  view();
+}
+
+const removeThat = (userIdIndex, i) => {
+  model.users[userIdIndex].shoppingCart.splice(i, 1);
+  view();
 };

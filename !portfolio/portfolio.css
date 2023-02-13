@@ -1,13 +1,25 @@
 .portfolioArticl {
   background-color: var(--primaryColor);
+  margin: 10px;
+  padding: 10px;
 }
+
+.portfolioArticlColection {
+  min-height: 84vh;
+}
+
+.portfolioArticl img {
+  width: 100%;
+}
+
 .spesificPortfolioArticle {
+  min-height: 84vh;
 }
 
 .spesificPortfolioArticle section {
+  background-color: var(--primaryColor);
   margin: 10px;
   padding: 10px;
-  background-color: var(--primaryColor);
 }
 
 .spesificPortfolioArticle section h2 {
@@ -16,4 +28,14 @@
 
 .spesificPortfolioArticle section img {
   width: 100%;
+}
+
+@media (max-width: 630px) {
+  .spesificPortfolioArticle {
+    min-height: 76vh;
+  }
+
+  .portfolioArticlColection {
+    min-height: 76vh;
+  }
 }

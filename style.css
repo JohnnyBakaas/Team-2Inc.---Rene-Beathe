@@ -5,20 +5,25 @@
   --quaternaryColor: rgb(252, 252, 252);
   --quinaryColor: rgb(6, 214, 160);
 }
+
 button {
   cursor: pointer;
 }
+
 * {
   font-family: arial;
 }
+
 body {
   margin: 0;
   padding: 0;
 }
+
 #root {
   min-height: 100vh;
   position: relative;
 }
+
 header {
   display: flex;
   flex-direction: row;
@@ -26,6 +31,7 @@ header {
   color: rgb(0, 0, 0);
   align-items: center;
 }
+
 header div {
   min-width: 40px;
   min-height: 40px;
@@ -35,24 +41,29 @@ header div {
   background-position: center;
   border-radius: 10em;
 }
+
 header h1 {
   margin: 0;
 }
+
 header h1:hover {
   cursor: pointer;
   font-weight: bold;
   text-decoration: underline;
 }
+
 header nav {
   position: absolute;
   display: flex;
   flex-direction: row;
   right: 0;
 }
+
 header nav p {
   margin: 0;
   padding: 10px;
 }
+
 header nav p:hover {
   cursor: pointer;
   font-weight: bold;
@@ -67,19 +78,23 @@ footer {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 footer div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 footer div article {
   display: flex;
   flex-direction: row;
 }
+
 footer div div {
   height: 30px;
   width: 30px;
 }
+
 footer p,
 footer h2 {
   margin: 0;
@@ -89,6 +104,7 @@ footer h2 {
 .post-it-note-container {
   display: flex;
 }
+
 .post-it-note {
   padding: 10px;
   flex-direction: column;
@@ -97,6 +113,7 @@ footer h2 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 10px;
 }
+
 .post-it-note:hover {
   box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
   transform: scale(1.15);
@@ -108,6 +125,7 @@ footer h2 {
   animation-timing-function: linear;
   cursor: pointer;
 }
+
 .note1 {
   background: linear-gradient(
     53.65deg,
@@ -116,6 +134,7 @@ footer h2 {
     #f69873 91.82%
   );
 }
+
 .note2 {
   background: linear-gradient(
     148.71deg,
@@ -124,9 +143,11 @@ footer h2 {
     #ea526f 26.89%
   );
 }
+
 .note3 {
   background: linear-gradient(180deg, #ffffc2 0%, #ffff70 100%);
 }
+
 .note4 {
   background: linear-gradient(
     148.71deg,
@@ -135,11 +156,17 @@ footer h2 {
     #ffff76 99.81%
   );
 }
+
+.note5 {
+  background: linear-gradient(40deg, #e552ea 26.89%, #7e73f6 78.68%);
+}
+
 .notePicture {
   height: 60%;
   width: 30%;
   float: right;
 }
+
 @keyframes note {
   25% {
     rotate: 20deg;
@@ -172,6 +199,7 @@ footer h2 {
   margin: 0;
   padding: 0;
 }
+
 .homePageText {
   background-color: rgba(0, 0, 0, 0.568);
   position: absolute !important;
@@ -225,6 +253,7 @@ footer h2 {
   footer div:not(:last-child) {
     padding: 5px;
   }
+
   footer div:not(:last-child) {
     border-bottom: solid 1px black;
   }

@@ -6,10 +6,9 @@ section aside .selected {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   border: 3px solid var(--secondaryColor);
   width: 400px;
-  height: 300px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -20,8 +19,16 @@ section aside .selected {
   margin: 0;
 }
 
+.salgsArtikkel h4 {
+  margin: 10px;
+}
+
+.salgsArtikkel p {
+  margin: 10px;
+}
+
 .storeArticleImg {
-  height: 200px;
+  height: 250px;
   width: 95%;
   background-size: cover;
   background-position: center;
@@ -29,26 +36,35 @@ section aside .selected {
 }
 
 .articleViewFocused {
-  padding: 30px;
+  padding: 0;
 }
+
+.articleViewFocused :first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
 .articleViewFocused section {
   display: flex;
   flex-direction: column;
   background-color: var(--primaryColor);
-  min-width: 37em;
+
   justify-content: center;
   padding: 10px;
   margin: 10px;
 }
+
 .articleViewFocused h1 {
   text-align: left;
   margin: 0;
 }
+
 .articleViewFlex {
   display: flex;
   flex-direction: row !important;
   background-color: red;
 }
+
 .articleViewFocused section article div {
   height: 400px;
   width: 400px;
@@ -57,6 +73,7 @@ section aside .selected {
   background-position: center;
   background-color: var(--tetriaryColor);
 }
+
 .articleBuySection {
   display: flex;
   padding: 30px;
@@ -67,12 +84,14 @@ section aside .selected {
   font-size: 1.5em;
   flex-wrap: nowrap;
 }
+
 .articleBuySection p h2 {
   margin: 0;
   padding: 0;
   display: flex;
   white-space: nowrap;
 }
+
 .articleBuySection button {
   width: 100%;
   padding: 5px;
@@ -82,21 +101,27 @@ section aside .selected {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
 }
+
 .storeColorSelectionSquare {
   width: 20px !important;
   height: 20px !important;
   border: 0 !important;
 }
+
 .storeColorSelection {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .ecommerce-section {
   display: flex;
   margin-top: 40px;
   margin-bottom: 40px;
+  min-height: 73vh;
 }
 
 .ecommerce-section aside {
@@ -124,4 +149,52 @@ section aside .selected {
 
 .ecommerce-section aside button:hover {
   background-color: rgb(217, 217, 217);
+}
+
+@media (max-width: 630px) {
+  .ecommerce-section {
+    flex-direction: column;
+    margin-top: 0;
+    min-height: 68vh;
+  }
+
+  .ecommerce-section aside {
+    border: 0;
+  }
+
+  .store-Navbar {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .store-Navbar button {
+    width: 30%;
+  }
+
+  .articleViewFlex {
+    flex-direction: column !important;
+  }
+
+  .articleViewFocused section article div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: 0;
+  }
+
+  .articleViewFocused section article h2 {
+    margin: 10px;
+  }
+
+  .articleBuySection :first-child {
+    margin-bottom: 10px;
+  }
+
+  .articleViewFocused section article p {
+    margin: 10px;
+  }
 }

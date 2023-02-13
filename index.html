@@ -38,14 +38,14 @@
   <body>
     <div id="root">Nå er det noe VELDIG gærlig her</div>
 
-    <script src="model.js" async></script>
-    <script src="controller.js" async></script>
+    <script src="model.js" async defer></script>
+    <script src="controller.js" async defer></script>
     <script src="!login/loginView.js" async defer></script>
-    <script src="!login/loginController.js" async></script>
+    <script src="!login/loginController.js" async defer></script>
     <script src="!aboutme/aboutMeView.js" async defer></script>
     <script src="!portfolio/portfolioArticleView.js" async defer></script>
     <script src="!register/registerView.js" async defer></script>
-    <script src="!register/registerController.js" async></script>
+    <script src="!register/registerController.js" async defer></script>
     <script src="!portfolio/portfolioColectionView.js" async defer></script>
     <script
       src="!portfolio/portfolioColectionController.js"
@@ -53,9 +53,13 @@
       defer
     ></script>
     <script src="!booking/bookingView.js" async defer></script>
-    <script src="!booking/bookingController.js" async></script>
+    <script src="!booking/bookingController.js" async defer></script>
     <script src="!ecommerce/ecommerceColectionView.js" async defer></script>
-    <script src="!ecommerce/ecommerceColectionController.js" async></script>
+    <script
+      src="!ecommerce/ecommerceColectionController.js"
+      async
+      defer
+    ></script>
     <script src="!ecommerce/ecommerceArticleView.js" async defer></script>
     <script src="!ecommerce/ecommerceArticleController.js" async defer></script>
     <script src="yourStoreOrdersView.js" async defer></script>
@@ -66,11 +70,26 @@
       defer
     ></script>
     <script src="!course/courseCommon.js" async defer></script>
-    <script src="!course/courseView.js" async defer></script>
-    <script src="!course/courseController.js" async defer></script>
-    <script src="!course/courseShoppingCartView.js" async defer></script>
-    <script src="!course/courseShoppingCartController.js" async defer></script>
+    <script src="!course/store/courseStoreView.js" async defer></script>
+    <script src="!course/store/courseStoreController.js" async defer></script>
+    <script
+      src="!course/shopping-cart/courseShoppingCartView.js"
+      async
+      defer
+    ></script>
+    <script
+      src="!course/shopping-cart/courseShoppingCartController.js"
+      async
+      defer
+    ></script>
+    <script src="!course/checkout/courseCheckoutView.js" async defer></script>
+    <script
+      src="!course/checkout/courseCheckoutController.js"
+      async
+      defer
+    ></script>
     <script src="homePageView.js" async defer></script>
-    <script src="view.js" async defer></script>
+    <script src="view.js" defer></script>
+    <span onload="view()"></span>
   </body>
 </html>

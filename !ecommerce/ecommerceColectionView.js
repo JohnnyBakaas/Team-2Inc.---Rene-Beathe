@@ -21,7 +21,7 @@ const makeStoreNavbar = () => {
   if (model.app.currentUser) {
     navbarHTML += `
   <section>
-        <nav>
+        <nav class="store-Navbar">
             <button onclick="changeCurrentPage('yourShoppingCartView')"> Handlevogn </button>
             <button onclick="changeCurrentPage('yourStoreOrdersView')"> Dine bestillinger </button>
             <button onclick="logOut()"> Logg ut </button>

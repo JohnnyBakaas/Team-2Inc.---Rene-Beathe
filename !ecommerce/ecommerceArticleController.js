@@ -4,10 +4,12 @@ const addToShoppingCart = (articleIndex) => {
   if (!model.app.currentUser) {
     return changeCurrentPage("loginView");
   }
+
   // legg til i handlevogn funksjon
   const userIndex = model.users.findIndex((obj) => {
     return obj.userId === model.app.currentUser;
   });
+
   if (model.users[userIndex].shoppingCart.length === 0) {
     return model.users[userIndex].shoppingCart.push({
       articleId: model.storeArticles[articleIndex].articleId,

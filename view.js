@@ -37,11 +37,14 @@ const view = () => {
     case "yourShoppingCartView":
       htmlOut += yourShoppingCartView();
       break;
-    case "courseView":
-      htmlOut += courseView();
+    case "courseStoreView":
+      htmlOut += courseStoreView();
       break;
     case "courseShoppingCartView":
       htmlOut += courseShoppingCartView();
+      break;
+    case "courseCheckoutView":
+      htmlOut += courseCheckoutView();
       break;
   }
 
@@ -63,7 +66,7 @@ const makeHeader = () => {
         
             <p class="hover" onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
             <p class="hover" onclick="changeCurrentPage('bookingView')">Booking</p>
-            <p class="hover" onclick="changeCurrentPage('courseView')">Kurs</p>
+            <p class="hover" onclick="changeCurrentPage('courseStoreView')">Kurs</p>
             <p class="hover" onclick="changeCurrentPage('ecommerceCollectionView')">Merch</p>
             <p class="hover" onclick="changeCurrentPage('aboutMeView')">Om meg</p>
            
@@ -76,7 +79,7 @@ const makeHeader = () => {
         
             <p class="hover" onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
             <p class="hover" onclick="changeCurrentPage('bookingView')">Booking</p>
-            <p class="hover" onclick="changeCurrentPage('courseView')">Kurs</p>
+            <p class="hover" onclick="changeCurrentPage('courseArticlesView')">Kurs</p>
             <p class="hover" onclick="changeCurrentPage('ecommerceCollectionView')">Merch</p>
             <p class="hover" onclick="changeCurrentPage('aboutMeView')">Om meg</p>
            
@@ -106,4 +109,6 @@ const makeFooter = () => {
     `;
 };
 
-view();
+window.addEventListener("load", function () {
+  view();
+});

@@ -1,5 +1,5 @@
 const portfolioColectionView = () => {
-  let theHTML = "";
+  let theHTML = "<div class='portfolioArticlColection'>";
   model.portfolioArticles.forEach((p) => {
     theHTML += `
       <article class="portfolioArticl" 
@@ -10,6 +10,7 @@ const portfolioColectionView = () => {
       </article>
     `;
   });
+  theHTML += "</div>";
   return theHTML;
 };
 
