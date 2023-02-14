@@ -2,33 +2,16 @@
 
 function yourShoppingCartView() {
   return `
-  <section class="yourShoppingCart">
+  <section>
     <h1>Din handlevogn</h1>
-
+    <table class="yourShoppingCart"><tbody>
+<tr><th>Produkt Navn</th><th>Produkt Farge</th><th>Produkt Antall</th><th>Pris</th></tr>
     ${shoppingCart()}
 
   </section>
   `;
 }
 
-function yourShoppingCart() {
-  const userIdIndex = model.users.findIndex(function (obj) {
-    return obj.userId === model.app.currentUser;
-  });
-
-  let html = "";
-  for (let i = 0; i < model.users[userIdIndex].shoppingCart.length; i++) {
-    const shoppingCart = model.users[userIdIndex].shoppingCart;
-
-    html += `
-    <div class="your-shoppingcart">
-      <span>${shoppingCart[i].title}</span>
-    </div>
-    `;
-  }
-
-  return html;
-}
 // convert this to a table, looks ugly now when there is a length difference.
 const shoppingCart = () => {
   let total = 0;
@@ -40,20 +23,24 @@ const shoppingCart = () => {
     let currentItem = model.users[userIdIndex].shoppingCart[i];
     model.storeArticles.forEach((e) => {
       if (e.articleId === currentItem.articleId) {
-        html += `<div id="item${i}"><span>${e.title}</span> <span>Farge:${
-          currentItem.color[0]
-        }<p class="colorBox" style="background-color:${
-          currentItem.color[1]
-        }"></p></span> <input class="shoppingCartInput" onchange="calculation(${userIdIndex}, ${i}, this.value)" value="${
+        html += `<tr id="item${i}"><td>${
+          e.title
+        }</td><td><div class="flexDiv"><p>${
+          currentItem.color ? currentItem.color[0] : "Har ingen farge"
+        }</p><p class="colorBox" style="background-color:${
+          currentItem.color ? currentItem.color[1] : "black"
+        };display:${
+          currentItem.color ? "block" : "none"
+        }"></p></div></td> <td class="inputReduction"><input class="shoppingCartInput" onchange="calculation(${userIdIndex}, ${i}, this.value)" value="${
           currentItem.quantity
-        }">x${e.price}</span>Kr<span>Pris:${
+        }">x${e.price}Kr</td><td class="lastChild">Pris:${
           e.price * currentItem.quantity
-        }Kr<button onclick="removeThat(${userIdIndex},${i})">Fjern</button></span></div>`;
+        }Kr<button onclick="removeThat(${userIdIndex},${i})">Fjern</button></td>`;
         total += e.price * currentItem.quantity;
       }
     });
   }
-  html += `<div>Total Pris:${total}Kr<div><button>Check Ut</button></div>`;
+  html += `</tbody></table><div class="totalAndCheck"><p>Total Pris:${total}Kr<p><button onclick="goToCheckout()">Check Ut</button></div>`;
   return html;
 };
 function calculation(userIdIndex, i, value) {
@@ -65,3 +52,19 @@ const removeThat = (userIdIndex, i) => {
   model.users[userIdIndex].shoppingCart.splice(i, 1);
   view();
 };
+
+// function yourShoppingCart() {
+//   const userIdIndex = model.users.findIndex(function (obj) {
+//     return obj.userId === model.app.currentUser;
+//   });
+
+//   let html = "";
+//   for (let i = 0; i < model.users[userIdIndex].shoppingCart.length; i++) {
+//     const shoppingCart = model.users[userIdIndex].shoppingCart;
+
+//     html += `
+//     <div class="your-shoppingcart">
+//       <span>${shoppingCart[i].title}</span>
+//     </div>
+//     `;
+//   }

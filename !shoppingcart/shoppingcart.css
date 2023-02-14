@@ -1,37 +1,87 @@
 .yourShoppingCart {
-  display: flex;
   flex-direction: column;
   margin: 0;
+  border-collapse: collapse;
+  width: 100%;
 }
 .shoppingCartInput {
-  width: 1%;
+  width: 8%;
+  max-width: 8%;
 }
 
-.yourShoppingCart div:nth-child(even) {
+.yourShoppingCart tr:nth-child(even) {
   background: var(--primaryColor);
-  padding: 15px;
-  display: flex;
 }
-.yourShoppingCart div:nth-child(odd) {
+.yourShoppingCart tr:nth-child(odd) {
   background: var(--secondaryColor);
-  padding: 15px;
-  display: flex;
 }
-.yourShoppingCart div:last-child {
+.yourShoppingCart tr:first-child {
   background-color: var(--tetriaryColor);
-  padding: 15px;
+}
+.yourShoppingCart tr:first-child * {
+  padding: 10px;
 }
 .colorBox {
   width: 20px !important;
   height: 20px !important;
-  border: 3px solid rgba(119, 108, 108, 0.733);
+  border: 3px solid rgba(119, 108, 108, 0.733) !important;
   display: inline-block;
-  margin: 0;
-  padding: 0;
+  margin-left: 15px;
+  padding: 0 !important;
+  position: relative;
+  bottom: 3px;
 }
-.yourShoppingCart div * {
+.yourShoppingCart tr td {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.inputReduction {
+  width: 200px;
+}
+.flexDiv {
   display: flex;
-  margin-left: 5%;
+  flex-direction: row;
+  justify-content: center;
 }
-.yourShoppingCart div {
+
+.totalAndCheck {
+  background-color: var(--tetriaryColor);
+  display: flex;
+  flex-direction: column;
+}
+.totalAndCheck * {
+  margin: 0;
+}
+.totalAndCheck p {
+  font-weight: bold;
+}
+
+.totalAndCheck button {
+  background-color: var(--quinaryColor);
+  color: white;
+  font-weight: bold;
+  border: 0;
+  border-radius: 0.2em;
+  padding: 5px;
+  font-size: 1em;
+  width: 100px;
+}
+.totalAndCheck button:hover {
+  cursor: pointer;
+  background-color: var(--quaternaryColor);
+  color: black;
+}
+@media (max-width: 630px) {
+  .colorBox {
+    width: 20px !important;
+    height: 20px !important;
+    border: 3px solid rgba(119, 108, 108, 0.733) !important;
+    display: inline-block;
+    margin: 0;
+    padding: 0 !important;
+  }
+  .flexDiv {
+    display: block;
+  }
 }

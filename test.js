@@ -4,6 +4,7 @@ const generateCalenderDates = (monthDelta) => {
   const monthSetter = generatedDay.getMonth() + monthDelta;
 
   generatedDay.setMonth(monthSetter);
+  const year = generatedDay.getFullYear();
   const curentMonthLength = new Date();
   curentMonthLength.setMonth(monthSetter + 1);
   curentMonthLength.setDate(0);
@@ -14,6 +15,7 @@ const generateCalenderDates = (monthDelta) => {
   firstDay.setMonth(monthSetter);
   firstDay.setDate(1);
   if (firstDay.getDay() == 0) {
+    // Hvis første er en søndag
     generatedDay.setDate(0);
     let setDay = generatedDay.getDate();
     kalenderData[0][6] = 1;
@@ -22,6 +24,7 @@ const generateCalenderDates = (monthDelta) => {
       kalenderData[0][i] = kalenderData[0][i + 1] - 1;
     }
   } else {
+    // Alle andre dager
     kalenderData[0][firstDay.getDay() - 1] = 1;
     generatedDay.setDate(0);
     let setDay = generatedDay.getDate();
@@ -42,6 +45,9 @@ const generateCalenderDates = (monthDelta) => {
 
   return {
     month: monthSetter,
-    dates: kalenderData,
+    weeks: kalenderData,
+    year: year,
   };
 };
+
+console.log(generateCalenderDates(102));

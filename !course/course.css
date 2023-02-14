@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-around;
   margin: 20px;
+  flex-wrap: wrap;
+  min-height: 77vh;
 }
 
 .course-shopping-cart-layout {
@@ -13,7 +15,7 @@
   margin: 15px 0 15px 15px;
 }
 
-.course-nav-layout span:hover {
+.course-nav-layout div:hover {
   cursor: pointer;
   margin-left: 1px;
   text-shadow: 0px 1px;
@@ -33,6 +35,7 @@
   border-radius: 5px;
   padding: 10px;
   border: 5px solid var(--secondaryColor);
+  height: fit-content;
 }
 
 .course-article-layout h3 {
@@ -40,9 +43,14 @@
   margin: 15px 0 7px 0;
 }
 
-.course-article-layout span {
+.course-article-layout div {
   font-size: 18px;
   margin-bottom: 10px;
+}
+
+.course-article-layout div:last-child {
+  font-size: 15px;
+  cursor: pointer;
 }
 
 .course-article-layout button {
@@ -126,4 +134,34 @@
 
 .course-checkout-layout button:hover {
   background: #383838;
+}
+
+@media (max-width: 630px) {
+  .course-img {
+    width: 98%;
+  }
+
+  .course-article-layout button {
+    width: 100%;
+  }
+
+  .course-article-layout {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+  }
+
+  .course-shop-layout {
+    margin: 5px;
+  }
+
+  .course-shop-layout {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    flex-wrap: wrap;
+    min-height: 0;
+  }
 }

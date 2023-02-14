@@ -15,6 +15,11 @@ section aside .selected {
   padding: 10px;
   background-color: var(--primaryColor);
 }
+.salgsArtikkel:hover,
+.storeartikkel:hover div {
+  border-color: black;
+  cursor: pointer;
+}
 .salgsArtikkel h3 {
   margin: 0;
 }

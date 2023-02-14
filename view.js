@@ -46,6 +46,9 @@ const view = () => {
     case "courseCheckoutView":
       htmlOut += courseCheckoutView();
       break;
+    case "storeCheckoutView":
+      htmlOut += checkOutView();
+      break;
   }
 
   htmlOut += makeFooter();
@@ -55,35 +58,29 @@ const view = () => {
 const makeHeader = () => {
   return /*html*/ `
   <header>
-        <div></div>
-        <h1 class="hover" onclick="changeCurrentPage('homePage')">René Beathe</h1>
-        <span class="toggle-button" onclick="togleNav()">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </span>
-        <nav>
-        
-            <p class="hover" onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
-            <p class="hover" onclick="changeCurrentPage('bookingView')">Booking</p>
-            <p class="hover" onclick="changeCurrentPage('courseStoreView')">Kurs</p>
-            <p class="hover" onclick="changeCurrentPage('ecommerceCollectionView')">Merch</p>
-            <p class="hover" onclick="changeCurrentPage('aboutMeView')">Om meg</p>
-           
-        </nav>
+    <div></div>
+    <h1 class="hover" onclick="changeCurrentPage('homePage')">René Beathe</h1>
+    <span class="toggle-button" onclick="togleNav()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </span>
+    <nav>
+      <p class="hover" onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
+      <p class="hover" onclick="changeCurrentPage('bookingView')">Booking</p>
+      <p class="hover" onclick="changeCurrentPage('courseStoreView')">Kurs</p>
+      <p class="hover" onclick="changeCurrentPage('ecommerceCollectionView')">Merch</p>
+      <p class="hover" onclick="changeCurrentPage('aboutMeView')">Om meg</p>
+    </nav>
+  </header>
 
-       
-
-    </header>
-    <nav class="mobileHeader">
-        
-            <p class="hover" onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
-            <p class="hover" onclick="changeCurrentPage('bookingView')">Booking</p>
-            <p class="hover" onclick="changeCurrentPage('courseArticlesView')">Kurs</p>
-            <p class="hover" onclick="changeCurrentPage('ecommerceCollectionView')">Merch</p>
-            <p class="hover" onclick="changeCurrentPage('aboutMeView')">Om meg</p>
-           
-        </nav>
+  <nav class="mobileHeader">
+    <p class="hover" onclick="changeCurrentPage('portfolioCollectionView')">Portefølje</p>
+    <p class="hover" onclick="changeCurrentPage('bookingView')">Booking</p>
+    <p class="hover" onclick="changeCurrentPage('courseStoreView')">Kurs</p>
+    <p class="hover" onclick="changeCurrentPage('ecommerceCollectionView')">Merch</p>
+    <p class="hover" onclick="changeCurrentPage('aboutMeView')">Om meg</p>
+  </nav>
   `;
 };
 
@@ -104,7 +101,6 @@ const makeFooter = () => {
             <p class="hover" onclick="navigator.clipboard.writeText(this.innerHTML);">renebeathehansen@gmail.com</p>
             <p>telefon: 901 83 482</p>
         </div>
-        
     </footer>
     `;
 };

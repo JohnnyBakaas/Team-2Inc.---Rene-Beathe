@@ -32,10 +32,10 @@
 
 @media (max-width: 630px) {
   .spesificPortfolioArticle {
-    min-height: 76vh;
+    min-height: 74vh;
   }
 
   .portfolioArticlColection {
-    min-height: 76vh;
+    min-height: 74vh;
   }
 }

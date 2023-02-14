@@ -331,21 +331,3 @@ const selectedMonth = (inputMonthDelta = 0) => {
 
   return monthIndex;
 };
-
-/*
-  generateCalenderDates(0)
-
-  month: 1
-  weeks: [
-    [30,31,1,2,3,4,5],
-    [6,7,8,9,10,11...],
-    [13...],
-    [20...],
-    [27,28,1,2,3,4,5],
-    [6,7,8,9,10,11,12],
-  ]
-
-  button onclick talltetSomTeller++ ->
-  button onclick talltetSomTeller-- <-
-  display array med moth over
-*/

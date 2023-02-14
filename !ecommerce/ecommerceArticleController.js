@@ -19,14 +19,22 @@ const addToShoppingCart = (articleIndex) => {
   } else {
     for (let i = 0; i < model.users[userIndex].shoppingCart.length; i++) {
       if (model.users[userIndex].shoppingCart[i].articleId === articleIndex) {
-        if (
-          model.users[userIndex].shoppingCart[i].color[0] ===
-          model.inputs.shoppingColor[0]
-        ) {
-          return model.users[userIndex].shoppingCart[i].quantity++;
+        if (!model.storeArticles[articleIndex].colors) {
+          model.inputs.shoppingColor = ``;
         }
+        if (model.storeArticles[articleIndex].colors) {
+          if (
+            model.users[userIndex].shoppingCart[i].color[0] ===
+            model.inputs.shoppingColor[0]
+          ) {
+            return model.users[userIndex].shoppingCart[i].quantity++;
+          }
+        } else return model.users[userIndex].shoppingCart[i].quantity++;
       }
     }
+  }
+  if (!model.storeArticles[articleIndex].colors) {
+    model.inputs.shoppingColor = ``;
   }
   model.users[userIndex].shoppingCart.push({
     articleId: model.storeArticles[articleIndex].articleId,

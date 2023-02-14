@@ -152,7 +152,7 @@ const model = {
       img: "img/renebeathe.jpg",
       description: "dette er ett flott produkt..",
       category: ["Kake", "Matt"],
-      colors: [{ text: "Brun", css: "brown" }],
+
       articleId: 4,
       price: 4550,
     },
@@ -161,7 +161,7 @@ const model = {
       img: "img/renebeathe.jpg",
       description: "dette er ett flott produkt..",
       category: ["Kake", "Matt"],
-      colors: [{ text: "Brun", css: "brown" }],
+
       articleId: 5,
       price: 4550,
     },
@@ -210,7 +210,7 @@ const model = {
       address: "",
       zipCode: "",
       orderNum: 0,
-      days: ["30.1.2023", "31.1.2023"],
+      days: ["14.2.2023", "17.2.2023", "20.1.2023", "15.1.2024"],
     },
   ],
 };

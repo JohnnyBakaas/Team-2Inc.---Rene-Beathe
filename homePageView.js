@@ -26,7 +26,7 @@ const makeHomePage = () => {
                 <img class="notePicture" src="img/bookingStickman.svg"/>
             </div>
 
-            <div class="post-it-note note3" onclick="changeCurrentPage('courseView')">
+            <div class="post-it-note note3" onclick="changeCurrentPage('courseStoreView')">
                 <h2> Kurs </h2>
                 <p> text content </p>
                 <img class="notePicture" src="img/shopStickman.svg"/>
@@ -38,7 +38,7 @@ const makeHomePage = () => {
                 <img class="notePicture" src="img/shopStickman.svg"/>
             </div>
 
-            <div class="post-it-note note4" onclick="changeCurrentPage('AboutMeView')">
+            <div class="post-it-note note4" onclick="changeCurrentPage('aboutMeView')">
                 <h2> Om meg </h2>
                 <p> text content </p>
                 <img class="notePicture" src="img/aboutMeStickman.svg"/>

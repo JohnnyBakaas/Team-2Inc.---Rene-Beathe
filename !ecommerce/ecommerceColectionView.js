@@ -16,29 +16,25 @@ const ecommerceColectionView = () => {
 };
 
 const makeStoreNavbar = () => {
-  let navbarHTML = "";
-
-  if (model.app.currentUser) {
-    navbarHTML += `
-  <section>
-        <nav class="store-Navbar">
-            <button onclick="changeCurrentPage('yourShoppingCartView')"> Handlevogn </button>
-            <button onclick="changeCurrentPage('yourStoreOrdersView')"> Dine bestillinger </button>
-            <button onclick="logOut()"> Logg ut </button>
-        </nav>
+  return /*HTML*/ `
+    <section>
+      <nav class="store-Navbar">
+        ${
+          model.app.currentUser
+            ? `
+      <button onclick="changeCurrentPage('yourShoppingCartView')"> Handlevogn </button>
+      <button onclick="changeCurrentPage('yourStoreOrdersView')"> Dine bestillinger </button>
+      <button onclick="logOut()"> Logg ut </button>
+      `
+            : `
+      <div style=" width: 30%"></div>
+      <div style=" width: 30%"></div>
+      <button onclick="changeCurrentPage('loginView')"> Logg inn </button>
+      `
+        }
+      </nav>
     </section>
   `;
-  } else {
-    navbarHTML += `
-    <section>
-        <nav>
-            <button onclick="changeCurrentPage('loginView')"> Logg inn </button>
-        </nav>
-    </section>
-    `;
-  }
-
-  return navbarHTML;
 };
 
 const makeStoreArticles = () => {

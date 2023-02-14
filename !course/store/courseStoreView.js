@@ -3,7 +3,7 @@
 function courseStoreView() {
   return `
     <nav class="course-nav-layout">
-      <span onclick="changeCurrentPage('courseShoppingCartView')">Sjekk handlevogn</span>
+      <div onclick="changeCurrentPage('courseShoppingCartView')">Sjekk handlevogn</div>
     </nav>
 
     <header class="course-header-layout">

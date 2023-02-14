@@ -3,7 +3,7 @@
 function courseShoppingCartView() {
   return `
     <nav class="course-nav-layout">
-      <span onclick="changeCurrentPage('courseStoreView')">Tilbake til kurs</span>
+      <div onclick="changeCurrentPage('courseStoreView')">Tilbake til kurs</div>
     </nav>
 
     <header class="course-header-layout">
@@ -37,10 +37,10 @@ function courseShoppingCart() {
 
         <img class="course-img" src="${user.courseShoppingCart[i].img}">
         <h3>${user.courseShoppingCart[i].title}</h3>
-        <span>${user.courseShoppingCart[i].price}kr</span>
-        <span onclick="removeCourseFromShoppingCart(${user.courseShoppingCart[i].courseId})">
+        <div>${user.courseShoppingCart[i].price}kr</div>
+        <div onclick="removeCourseFromShoppingCart(${user.courseShoppingCart[i].courseId})">
           FJERN
-        </span>
+        </div>
 
     </article>
     `;

@@ -278,23 +278,23 @@ footer h2 {
 
   .homeMenuScreen {
     background-image: url("img/ballong3.jpg");
-    height: 90vh;
+    height: 95vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
 
   .homePageText {
+    display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.568);
-    position: absolute !important;
-    top: 40vh;
-    left: 45%;
+    top: 70vh;
+    left: 10%;
     border-radius: 30px;
     border: 5px rgba(0, 0, 0, 0.726);
     color: rgba(255, 255, 255, 0.801) !important;
-    height: 20vh;
-    width: 50%;
-    text-align: center !important;
+    height: auto;
+    width: 75%;
   }
 
   .toggle-button {

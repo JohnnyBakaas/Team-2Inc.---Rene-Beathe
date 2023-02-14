@@ -15,7 +15,7 @@
 .booking-bilde {
   display: flex;
   width: 800px;
-  min-width: 250px;
+  min-width: 150px;
   height: 400px;
   background-image: url("img/renebeathe.jpg");
   background-size: cover;
@@ -114,4 +114,16 @@
 }
 .calenderNotThisMonth {
   color: rgb(168, 168, 168);
+}
+.calenderMonth {
+  text-align: center;
+  background-color: var(--primaryColor);
+  padding: 10px;
+  margin: 0;
+}
+.calenderBooked {
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+  background-color: rgb(255, 0, 0);
 }
