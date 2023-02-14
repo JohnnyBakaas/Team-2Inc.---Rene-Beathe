@@ -91,8 +91,17 @@ const bookingView = () => {
 */
 
 const makeCalender = () => {
+  let inputMonthDelta = model.inputs.currentMonthDelta;
+  let weekCount = 0;
+
+  let month = generateCalenderDates(inputMonthDelta).month;
+  let year = generateCalenderDates(inputMonthDelta).year;
+
   let theHTML = `
   <table class="calender" cellspacing="0">
+    <tr>
+      <h2 class="calenderMonth">${findMonthName(inputMonthDelta)} ${year}</h2>
+    </tr>
     <tr>
       <th>Man</th>
 	    <th>Tir</th>
@@ -104,15 +113,12 @@ const makeCalender = () => {
     </tr>
   `;
 
-  let inputMonthDelta = model.inputs.currentMonthDelta;
-  let weekCount = 0;
   for (
     let i = 0;
     i < generateCalenderDates(inputMonthDelta).weeks.length;
     i++
   ) {
     weekCount++;
-    console.log(weekCount);
     theHTML += `<tr>`;
     let weekNumber = generateCalenderDates(inputMonthDelta).weeks[i];
     for (
@@ -129,10 +135,14 @@ const makeCalender = () => {
       ) {
         theHTML += `<td class="calenderNotThisMonth">${dayNumber}</td>`;
       } else {
-        theHTML += `<td>${dayNumber}</td>`;
+        if (
+          isBooked(`${dayNumber}.${selectedMonth(inputMonthDelta) + 1}.${year}`)
+        ) {
+          theHTML += `<td class="calenderBooked">${dayNumber}</td>`;
+        } else {
+          theHTML += `<td>${dayNumber}</td>`;
+        }
       }
-
-      console.log(generateCalenderDates(inputMonthDelta).weeks[0]);
     }
     theHTML += `</tr>`;
   }
@@ -140,6 +150,26 @@ const makeCalender = () => {
   theHTML += `</table>`;
 
   return theHTML;
+};
+
+const isBooked = (checkDate) => {
+  let bookedDates = [];
+
+  let out = false;
+
+  for (let i = 0; i < model.bookingOrders.length; i++) {
+    for (let j = 0; j < model.bookingOrders[i].days.length; j++) {
+      bookedDates.push(model.bookingOrders[i].days[j]);
+    }
+  }
+
+  console.log(bookedDates);
+  console.log(checkDate);
+
+  if (bookedDates.includes(checkDate)) {
+    out = true;
+  }
+  return out;
 };
 
 /*
@@ -213,6 +243,9 @@ const generateCalenderDates = (monthDelta) => {
   const monthSetter = generatedDay.getMonth() + monthDelta;
 
   generatedDay.setMonth(monthSetter);
+
+  const year = generatedDay.getFullYear();
+
   const curentMonthLength = new Date();
   curentMonthLength.setMonth(monthSetter + 1);
   curentMonthLength.setDate(0);
@@ -254,6 +287,7 @@ const generateCalenderDates = (monthDelta) => {
   return {
     month: monthSetter,
     weeks: kalenderData,
+    year: year,
   };
 };
 
@@ -265,6 +299,37 @@ const generateCalender = () => {
               <button onclick="bookingChangeCalenderMonth(1)">Neste måned</button>
           </div>
   `;
+};
+
+const findMonthName = (inputMonthDelta) => {
+  let monthsArray = [
+    "Januar",
+    "Februar",
+    "Mars",
+    "April",
+    "Mai",
+    "Juni",
+    "Juli",
+    "August",
+    "September",
+    "Oktober",
+    "November",
+    "Desember",
+  ];
+
+  let getMonth = selectedMonth(inputMonthDelta);
+
+  return monthsArray[getMonth];
+};
+
+const selectedMonth = (inputMonthDelta = 0) => {
+  let monthIndex = generateCalenderDates(inputMonthDelta).month % 12;
+
+  while (monthIndex < 0) {
+    monthIndex = monthIndex + 12;
+  }
+
+  return monthIndex;
 };
 
 /*
