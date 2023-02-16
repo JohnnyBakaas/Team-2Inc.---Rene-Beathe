@@ -9,6 +9,9 @@ const registerMe = () => {
     address: `${address.value}`,
     zipcode: `${zipcode.value}`,
     shoppingCart: [],
+    storeOrders: [],
+    courseShoppingCart: [],
+    courseOrders: [],
   };
   if (
     fname.value == "" ||
@@ -22,6 +25,7 @@ const registerMe = () => {
 
   model.users.push(userInfo);
   clearRegister();
+  model.app.state = "loginView";
   view();
 };
 

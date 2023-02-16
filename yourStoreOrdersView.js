@@ -3,8 +3,10 @@
 function yourStoreOrdersView() {
   return `
   <section>
-
-    <h1>Dine bestillinger</h1>
+    <span style="display: flex;justify-content: space-between;">
+      <h1>Dine bestillinger</h1>
+      <button onclick="changeCurrentPage('ecommerceCollectionView')">Tilbake</button>
+    </span>
 
     <div class="your-orders">
       ${yourStoreOrders()}

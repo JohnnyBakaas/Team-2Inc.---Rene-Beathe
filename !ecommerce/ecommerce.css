@@ -16,7 +16,7 @@ section aside .selected {
   background-color: var(--primaryColor);
 }
 .salgsArtikkel:hover,
-.storeartikkel:hover div {
+.salgsArtikkel:hover div {
   border-color: black;
   cursor: pointer;
 }

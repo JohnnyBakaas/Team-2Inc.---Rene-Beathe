@@ -1,0 +1,41 @@
+.myModal {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(76, 62, 62, 0.6);
+  top: -0px;
+  justify-content: center;
+}
+.myModal div:first-child {
+  margin: 15%;
+  background-color: var(--tetriaryColor);
+  height: 60%;
+  width: 60%;
+  top: 200px;
+  flex-direction: column;
+  text-align: center;
+  border: solid 6px black;
+}
+.myModal div header {
+  justify-content: center;
+}
+.myModal div header h1 {
+  margin-left: auto;
+}
+.myModal div header p {
+  margin-left: auto;
+}
+.myModal div footer {
+  padding: 30px;
+}
+.myForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: bold;
+}
+.myForm input {
+  width: 50%;
+  margin-left: 25%;
+  height: 3vh;
+}

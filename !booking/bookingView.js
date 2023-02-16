@@ -101,6 +101,7 @@ const makeCalender = () => {
   <table class="calender" cellspacing="0">
     <tr>
       <h2 class="calenderMonth">${findMonthName(inputMonthDelta)} ${year}</h2>
+      <h4 class="calenderInfoText">■ Booket</h4>
     </tr>
     <tr>
       <th>Man</th>
@@ -162,9 +163,6 @@ const isBooked = (checkDate) => {
       bookedDates.push(model.bookingOrders[i].days[j]);
     }
   }
-
-  console.log(bookedDates);
-  console.log(checkDate);
 
   if (bookedDates.includes(checkDate)) {
     out = true;

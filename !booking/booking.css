@@ -2,16 +2,19 @@
   display: flex;
   flex-direction: column;
 }
+
 .booking-info {
   display: flex;
   flex-direction: row;
 }
+
 .booking-info p {
   padding-left: 20px;
   margin: 0;
   width: 300px;
   white-space: none;
 }
+
 .booking-bilde {
   display: flex;
   width: 800px;
@@ -30,18 +33,22 @@
   justify-content: center;
   margin-bottom: 20px;
 }
+
 .booking-contactform {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: var(--primaryColor);
-  outline: 5px solid black;
+  border: 5px solid black;
+  border-left: 0;
   padding: 20px;
 }
+
 .booking-contactform h1 {
   margin: 0;
   padding: 0;
 }
+
 .booking-contactform button {
   background-color: var(--secondaryColor);
   color: white;
@@ -52,6 +59,7 @@
   font-size: 1em;
   width: 100%;
 }
+
 .booking-contactform button:hover {
   cursor: pointer;
   background-color: var(--quinaryColor);
@@ -84,46 +92,111 @@
 .isBooked {
   background-color: rgb(255, 115, 0) !important;
 }
+
 #calenderDiv {
   border: 5px solid black;
 }
+
 .calender th {
   background-color: var(--primaryColor);
   padding: 10px;
 }
+
 .calender tbody tr:nth-of-type(even) {
   background-color: rgb(221, 221, 221) !important;
 }
+
 .calender td {
   text-align: center;
   padding: 10px;
 }
+
 .calenderButtons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
+
 .calenderButtons button {
   border: 0;
   width: 50%;
   background-color: var(--primaryColor);
   padding: 10px;
 }
+
 .calenderButtons button:hover {
   background-color: rgb(205, 169, 63);
 }
+
 .calenderNotThisMonth {
   color: rgb(168, 168, 168);
 }
+
 .calenderMonth {
   text-align: center;
   background-color: var(--primaryColor);
   padding: 10px;
   margin: 0;
 }
+
 .calenderBooked {
   color: white;
   font-style: italic;
   font-weight: bold;
   background-color: rgb(255, 0, 0);
+}
+
+.calenderInfoText {
+  background-color: var(--primaryColor);
+  margin: 0;
+  color: rgb(255, 0, 0);
+  text-align: center;
+}
+
+@media (max-width: 660px) {
+  .booking-bilde {
+    width: 100%;
+  }
+  .booking-info {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .booking-info p {
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid black;
+    width: 100%;
+  }
+
+  .booking-moreinfo {
+    padding: 20px;
+  }
+
+  .booking-moreinfo p {
+    margin: 0;
+    width: 100%;
+  }
+
+  .booking-contact {
+  }
+
+  .booking-contactform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primaryColor);
+    border: 5px solid black;
+    border-top: 0;
+    padding: 0px;
+    width: 258.781px;
+  }
+
+  .calender td {
+    padding: 5px;
+  }
+  .calender th {
+    padding: 5px;
+  }
 }

@@ -49,6 +49,9 @@ const view = () => {
     case "storeCheckoutView":
       htmlOut += checkOutView();
       break;
+    case "courseArticleView":
+      htmlOut += courseArticleView();
+      break;
   }
 
   htmlOut += makeFooter();

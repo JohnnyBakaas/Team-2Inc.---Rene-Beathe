@@ -51,6 +51,8 @@ const model = {
 
     currentArticle: 0, //articleId
 
+    currentCourseArticle: 0, //courseArticleId
+
     currentMonthDelta: 0, //for booking side
   },
 
@@ -86,14 +88,16 @@ const model = {
     {
       title: "Kurs: ?",
       img: "img/matte.png",
-      courseId: 1,
+      courseId: 0,
       price: 9600,
+      description: "Ekstremt bra kurs som du TRENGER",
     },
     {
       title: "Kurs: ?",
       img: "img/naturfag.png",
-      courseId: 2,
+      courseId: 1,
       price: 8500,
+      description: "Ekstremt bra kurs som du ABSOLUTT TRENGER",
     },
   ],
 
@@ -210,7 +214,7 @@ const model = {
       address: "",
       zipCode: "",
       orderNum: 0,
-      days: ["14.2.2023", "17.2.2023", "20.1.2023", "15.1.2024"],
+      days: ["14.2.2023", "17.2.2023", "20.1.2023", "15.1.2024", "24.12.2022"],
     },
   ],
 };
