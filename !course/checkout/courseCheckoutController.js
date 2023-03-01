@@ -39,4 +39,31 @@ function completePayment() {
 }
 
 // Legge til funksjoner som sjekker f.eks at "@" er i emailen osv...
-const email = "aamundhe@getacademy.no";
+const email1 = "aamundhe@getacademy.no";
+
+if (email1.includes("@") && email1.includes(".no")) console.log("adsf");
+
+const tegn = ["@", "."];
+let tegnTeller = 0;
+
+for (let i = 0; i < email1.length; i++) {
+  if (tegnTeller == 2) {
+    console.log("KAKE");
+    break;
+  }
+  if (email1[i] == tegn[tegnTeller]) {
+    tegnTeller++;
+  }
+}
+
+const checkIfEmail = (email) => {
+  if (email.indexOf(".", email.indexOf("@")) !== -1) {
+    let tegnEtterPunktum =
+      email.length - email.indexOf(".", email.indexOf("@"));
+    if (tegnEtterPunktum < 5 || tegnEtterPunktum > 1) {
+      return true;
+    }
+  }
+};
+
+console.log(checkIfEmail(email1));
