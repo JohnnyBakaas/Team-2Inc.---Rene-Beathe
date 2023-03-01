@@ -35,6 +35,16 @@ const model = {
       password: "",
     },
 
+    course_checkout: {
+      fname: "",
+      lname: "",
+      address: "",
+      email: "",
+      city: "",
+      zip: "",
+      country: "",
+    },
+
     shoppingFilter: "",
     shoppingColor: "",
 
@@ -209,12 +219,13 @@ const model = {
 
   bookingOrders: [
     {
-      firstName: "",
-      email: "",
-      address: "",
-      zipCode: "",
-      orderNum: 0,
       days: ["14.2.2023", "17.2.2023", "20.1.2023", "15.1.2024", "24.12.2022"],
+    },
+    {
+      days: ["14.3.2023", "17.3.2023", "20.3.2023", "15.3.2023", "24.3.2023"],
+    },
+    {
+      days: ["4.3.2023", "12.3.2023", "20.3.2023", "19.3.2023", "24.3.2023"],
     },
   ],
 };

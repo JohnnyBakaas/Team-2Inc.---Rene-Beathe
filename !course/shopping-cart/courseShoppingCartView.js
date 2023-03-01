@@ -58,7 +58,7 @@ function toCheckout() {
   }
 
   return `
-    <div class="course-checkout-layout">
+    <div class="course-to-check-out-layout">
       <span>TIL SAMMEN</span>
       <span>${getTotalPrice()}kr</span>
       <button onclick="changeCurrentPage('courseCheckoutView')">FORTSETT</button>

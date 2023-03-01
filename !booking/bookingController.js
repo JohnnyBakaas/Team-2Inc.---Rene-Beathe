@@ -1,9 +1,14 @@
-const contactSubmit = () => {
+const contactSubmit = (element) => {
   model.inputs.bookingData.fullName = bname.value;
   model.inputs.bookingData.email = bmail.value;
   model.inputs.bookingData.address = baddress.value;
   model.inputs.bookingData.zipCode = bzipcode.value;
 
+  console.log(element.parentElement.children[1].children[0]);
+
+  //element.parentElement.children[1].children[0].children[i].children[1].children[0].value = "";
+
+  removeContactForm(element);
   return false;
 };
 

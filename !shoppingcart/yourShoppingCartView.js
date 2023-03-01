@@ -18,25 +18,33 @@ function yourShoppingCartView() {
 <div class="myModal" style="display:none">
 
 <div>
-<header><h1>Check Out</h1><p>x</p></header>
+<header><h1>Check Out</h1><p onclick="modalThingy()">x</p></header>
 <form class="myForm">
-<label for="name">Name</label>
+<label for="name">Name<span>*</span></label>
 <input type="text" name="name" placeholder="Navn"/>
-<label for="lastName">Last Name</label>
+<label for="lastName">Last Name<span>*</span></label>
 <input type="text" name="lastName" placeholder="Etternavn"/>
-<label for="email">Email</label>
+<label for="email">Email<span>*</span></label>
 <input type="email" name="email" placeholder="examples@example.com"/>
-<label for="address">Address</label>
-<input type="text" name="address" placeholder="3870 Main St"/>
+<label for="address">Address<span>*</span></label>
+<input type="text" name="address" placeholder="Main St"/>
+<label for="zip">Zipcode<span>*</span></label>
+<input type="text" name="zip" placeholder="3870"/>
+${countryDropdown()}
+<label for="City">By<span>*</span></label>
+<input type="text" name="city" placeholder="By"/>
 </form>
 
 
 
 
 <h2>Total:${total}Kr</h2>
-<footer></footer>
+<footer><button class="pay" onclick="pay()">Betal</button></footer>
 </div></div>
-  `;
+  
+
+<section class="myModal" style="display:none"><div>something something test test</div></section>
+`;
 }
 
 // convert this to a table, looks ugly now when there is a length difference.

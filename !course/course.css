@@ -13,6 +13,7 @@
 
 .course-nav-layout {
   margin: 15px 0 15px 15px;
+  width: fit-content;
 }
 
 .course-nav-layout div:hover {
@@ -108,7 +109,7 @@
   background: var(--quinaryColor);
 }
 
-.course-checkout-layout {
+.course-to-check-out-layout {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -117,13 +118,13 @@
   border-top: 1px solid #000;
 }
 
-.course-checkout-layout span:first-child {
+.course-to-check-out-layout span:first-child {
   margin-right: 10px;
   font-weight: 600;
   font-size: 15px;
 }
 
-.course-checkout-layout button {
+.course-to-check-out-layout button {
   margin-left: 20px;
   border: 0;
   padding: 6px 50px;
@@ -132,7 +133,7 @@
   color: #fff;
 }
 
-.course-checkout-layout button:hover {
+.course-to-check-out-layout button:hover {
   background: #383838;
 }
 
@@ -164,4 +165,30 @@
     flex-wrap: wrap;
     min-height: 0;
   }
+}
+
+.course-check-out-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course-check-out-content {
+  display: flex;
+  flex-direction: column;
+  background: rgb(178, 178, 178);
+  padding: 30px;
+}
+
+.course-check-out-layout button {
+  border: 0;
+  padding: 6px 50px;
+  font-size: 14px;
+  background: #000;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.course-check-out-layout button:hover {
+  background: #383838;
 }

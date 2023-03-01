@@ -9,7 +9,7 @@
 .myModal div:first-child {
   margin: 15%;
   background-color: var(--tetriaryColor);
-  height: 60%;
+  height: 56%;
   width: 60%;
   top: 200px;
   flex-direction: column;
@@ -21,12 +21,41 @@
 }
 .myModal div header h1 {
   margin-left: auto;
+  margin-right: 0;
+}
+.myModal div header h1:hover {
+  cursor: auto;
+  text-decoration: none;
 }
 .myModal div header p {
   margin-left: auto;
+  color: red;
+  font-size: 155%;
+  margin-top: 0;
+  margin-right: 10px;
+}
+.myModal div header p:hover {
+  color: black;
+  cursor: pointer;
 }
 .myModal div footer {
-  padding: 30px;
+  padding: 31px;
+}
+
+.pay {
+  background-color: var(--quinaryColor);
+  color: white;
+  font-weight: bold;
+  border: 0;
+  border-radius: 0.2em;
+  padding: 5px;
+  font-size: 1em;
+  width: 100px;
+}
+.pay:hover {
+  cursor: pointer;
+  background-color: var(--quaternaryColor);
+  color: black;
 }
 .myForm {
   display: flex;
@@ -38,4 +67,34 @@
   width: 50%;
   margin-left: 25%;
   height: 3vh;
+}
+.myForm select {
+  width: 50.8%;
+  margin-left: 25%;
+  height: 3.5vh;
+}
+.myForm select:hover {
+  cursor: pointer;
+}
+.myForm label span {
+  color: red !important;
+  display: inline;
+  float: none;
+}
+@media (max-width: 630px) {
+  .myModal div footer {
+    flex-direction: row;
+    padding: 42px;
+  }
+  .myModal div:first-child {
+    height: 58%;
+  }
+}
+@media (max-width: 310px) {
+  .myModal div:first-child {
+    height: 58%;
+  }
+  .myModal div footer {
+    padding: 32px;
+  }
 }

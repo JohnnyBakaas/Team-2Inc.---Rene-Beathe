@@ -47,7 +47,7 @@ const bookingView = () => {
                         <td><input type="text" id="bzipcode"></td>
                     </tr>
                 </table>
-                <button onclick="contactSubmit()">Send</button>
+                <button onclick="contactSubmit(this)">Send</button>
            </div>
     </div>
     `;
@@ -328,4 +328,19 @@ const selectedMonth = (inputMonthDelta = 0) => {
   }
 
   return monthIndex;
+};
+
+const removeContactForm = (element) => {
+  for (
+    let i = 0;
+    i < element.parentElement.children[1].children[0].children.length;
+    i++
+  ) {
+    element.parentElement.children[1].children[0].children[
+      i
+    ].children[1].children[0].value = "";
+  }
+
+  element.style.backgroundColor = "red";
+  element.innerHTML = "Va tar kontak snarest";
 };
