@@ -9,12 +9,15 @@
 .myModal div:first-child {
   margin: 15%;
   background-color: var(--tetriaryColor);
-  height: 56%;
+  height: 56vh;
   width: 60%;
   top: 200px;
   flex-direction: column;
   text-align: center;
   border: solid 6px black;
+  animation-name: myModalAnimation;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
 }
 .myModal div header {
   justify-content: center;
@@ -39,9 +42,29 @@
   cursor: pointer;
 }
 .myModal div footer {
-  padding: 31px;
+  padding: 24px;
 }
+@keyframes myModalAnimation {
+  0% {
+    height: 0vh;
+    width: 0%;
+  }
 
+  100% {
+    height: 56vh;
+    width: 60%;
+  }
+}
+@keyframes reduction {
+  0% {
+    height: 56vh;
+    width: 60%;
+  }
+  100% {
+    height: 5vh;
+    width: 25%;
+  }
+}
 .pay {
   background-color: var(--quinaryColor);
   color: white;
@@ -84,7 +107,7 @@
 @media (max-width: 630px) {
   .myModal div footer {
     flex-direction: row;
-    padding: 42px;
+    padding: 35px;
   }
   .myModal div:first-child {
     height: 58%;
@@ -95,6 +118,6 @@
     height: 58%;
   }
   .myModal div footer {
-    padding: 32px;
+    padding: 25px;
   }
 }

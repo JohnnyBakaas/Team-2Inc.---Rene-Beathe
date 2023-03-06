@@ -1,11 +1,17 @@
 const ecommerceArticleView = () => {
+  const article = model.storeArticles.find(
+    (e) => e.articleId == model.inputs.currentArticle
+  );
+
+  console.log(article);
+
   let theHTML = `
     ${makeStoreNavbar()}
 
     <article class="articleViewFocused">
         <section style="flex-direction: row">
             <h1>
-                ${model.storeArticles[model.inputs.currentArticle].title}
+                ${article.title}
                 
             </h1>
             <br/>
@@ -13,22 +19,12 @@ const ecommerceArticleView = () => {
         </section>
         <section class="articleViewFlex">
             <article>
-                <div style="background-image: url('${
-                  model.storeArticles[model.inputs.currentArticle].img
-                }')"></div>
+                <div style="background-image: url('${article.img}')"></div>
             </article>
             <article class="articleBuySection">
-                ${
-                  model.storeArticles[model.inputs.currentArticle].colors
-                    ? makeColorSelection(
-                        model.storeArticles[model.inputs.currentArticle].colors
-                      )
-                    : ""
-                }
+                ${article.colors ? makeColorSelection(article.colors) : ""}
                 <h2>Pris</h2>
-                <p>${
-                  model.storeArticles[model.inputs.currentArticle].price
-                } kr</p>
+                <p>${article.price} kr</p>
                 <button onclick="addToShoppingCart(${[
                   model.inputs.currentArticle,
                 ]})">Legg til i handlevogn</button>
@@ -36,7 +32,7 @@ const ecommerceArticleView = () => {
         </section>
         <section>
             <h2>Beskrivelse</h2>
-            <p>${model.storeArticles[model.inputs.currentArticle].description}
+            <p>${article.description}
             </p>
         </section>
     </article>

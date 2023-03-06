@@ -20,30 +20,33 @@ function yourShoppingCartView() {
 <div>
 <header><h1>Check Out</h1><p onclick="modalThingy()">x</p></header>
 <form class="myForm">
+<p class="obligatory" style="display:none">Fyll Obligatoriske Felt</p>
 <label for="name">Name<span>*</span></label>
-<input type="text" name="name" placeholder="Navn"/>
-<label for="lastName">Last Name<span>*</span></label>
-<input type="text" name="lastName" placeholder="Etternavn"/>
+<input type="text" name="name" placeholder="Navn" required/>
+<label for="surName">Last Name<span>*</span></label>
+<input type="text" name="surName" placeholder="Etternavn" required/>
 <label for="email">Email<span>*</span></label>
-<input type="email" name="email" placeholder="examples@example.com"/>
+<input type="email" name="email" placeholder="examples@example.com" required/>
 <label for="address">Address<span>*</span></label>
-<input type="text" name="address" placeholder="Main St"/>
+<input type="text" name="address" placeholder="Main St" required/>
 <label for="zip">Zipcode<span>*</span></label>
-<input type="text" name="zip" placeholder="3870"/>
+<input type="text" name="zip" placeholder="3870" required/>
 ${countryDropdown()}
-<label for="City">By<span>*</span></label>
-<input type="text" name="city" placeholder="By"/>
+<label for="city">By<span>*</span></label>
+<input type="text" name="city" placeholder="By" required/>
+<h2>Total:${total}Kr</h2>
+<footer><button class="pay" onclick="submitCheckout(event)">Betal</button></footer>
 </form>
 
 
 
 
-<h2>Total:${total}Kr</h2>
-<footer><button class="pay" onclick="pay()">Betal</button></footer>
+
+
 </div></div>
   
 
-<section class="myModal" style="display:none"><div>something something test test</div></section>
+<section class="myModal" style="display:none"><div>Takk for kjøppet<button class="pay" onclick="pay()">Ok</button></div></section>
 `;
 }
 

@@ -1,10 +1,12 @@
 "use strict";
 
-const addToShoppingCart = (articleIndex) => {
+const addToShoppingCart = (articleId) => {
   if (!model.app.currentUser) {
     return changeCurrentPage("loginView");
   }
-
+  let articleIndex = model.storeArticles.findIndex(
+    (obj) => obj.articleId === articleId
+  );
   // legg til i handlevogn funksjon
   const userIndex = model.users.findIndex((obj) => {
     return obj.userId === model.app.currentUser;
@@ -12,13 +14,13 @@ const addToShoppingCart = (articleIndex) => {
 
   if (model.users[userIndex].shoppingCart.length === 0) {
     return model.users[userIndex].shoppingCart.push({
-      articleId: model.storeArticles[articleIndex].articleId,
+      articleId: articleId,
       color: model.inputs.shoppingColor,
       quantity: 1,
     });
   } else {
     for (let i = 0; i < model.users[userIndex].shoppingCart.length; i++) {
-      if (model.users[userIndex].shoppingCart[i].articleId === articleIndex) {
+      if (model.users[userIndex].shoppingCart[i].articleId === articleId) {
         if (!model.storeArticles[articleIndex].colors) {
           model.inputs.shoppingColor = ``;
         }
@@ -37,7 +39,7 @@ const addToShoppingCart = (articleIndex) => {
     model.inputs.shoppingColor = ``;
   }
   model.users[userIndex].shoppingCart.push({
-    articleId: model.storeArticles[articleIndex].articleId,
+    articleId: articleId,
     color: model.inputs.shoppingColor,
     quantity: 1,
   });

@@ -69,26 +69,44 @@ const model = {
   //data
   portfolioArticles: [
     {
-      title: "Mauertua barnehage",
-      img: "img/mauertua barnehage.png",
+      title: "Bygg kreativt med papp-rør i barnehagen",
+      img: "!portfolio/img/konstruksjon oversikt.JPG",
       content: [
-        { text: "i dette prosjektet..." }, // if(text) => sett inn i p
-        { img: "img/mauertua barnehage.png" }, // if(img) => sett inn img
-        { text: "mer tekst og ting..." },
-        { text: "mer tekst og ting..." },
-        { text: "mer tekst og ting..." },
-        { img: "img/mauertua barnehage.png" },
+        {
+          text: "Byggeaktiviteter er en flott måte å engasjere barn i læring og utforsking av realfag. En av de beste materialene for å bygge kreativt er papp-rør. Dette rimelige og tilgjengelige materialet kan brukes på mange måter, fra å lage strukturer og broer til å utforske geometri og matematikk. Her er noen ideer for å få i gang en morsom og lærerik byggeaktivitet i barnehagen ved hjelp av papp-rør.",
+        },
+
+        {
+          text: "Papp-rør kan brukes til å bygge forskjellige strukturer og broer. Barna kan få muligheten til å eksperimentere med forskjellige byggemetoder og finne ut hva som fungerer best. De kan lære om geometri og fysikk ved å prøve å finne den beste måten å støtte vekten av broen på, samt hvordan man kan øke styrken til strukturen.",
+        },
+        {
+          text: "Papp-rør kommer i forskjellige størrelser og former, som gir en flott mulighet til å utforske geometri og matematikk. Ved å sortere rørene etter størrelse og form, kan barna lære om grunnleggende konsepter som størrelse, form og sammenligning. De kan også prøve å lage mønstre eller kombinere rørene for å skape nye former og størrelser.",
+        },
+        { img: "!portfolio/img/konstruksjon matrealer.JPG" },
+        {
+          text: "Bygging med papp-rør kan også gi muligheter for samarbeid og utforskning. Barna kan jobbe sammen i grupper for å bygge større strukturer eller broer. De kan prøve å finne ut hvordan de kan lage en struktur som er høyere, sterkere eller mer stabil. Ved å jobbe sammen kan de lære om samarbeid og kommunikasjon, samtidig som de utvikler sine ferdigheter i realfag.I konklusjonen kan det påpekes at byggeaktiviteter med papp-rør er en flott måte å lære om realfag på en morsom og kreativ måte. Ved å bruke papp-rør kan barna utforske geometri, fysikk og matematikk på en praktisk og engasjerende måte. Det gir også muligheter for samarbeid og kreativ utfoldelse. Prøv å inkludere denne byggeaktiviteten i barnehagen for å engasjere barna i læring på en mors",
+        },
       ],
 
       articleId: 0,
     },
     {
-      title: "Annen barnehage",
-      img: "img/annen barnehage.png",
+      title: "Havets skatter - å lage leker av pinner og plast fra havet",
+      img: "!portfolio/img/pinner.JPG",
       content: [
-        { text: "i dette prosjektet..." },
-        { img: "img/annen barnehage.png" },
-        { text: "mer tekst og ting..." },
+        {
+          text: "I barnehagen er det alltid viktig å finne nye og spennende måter å engasjere barna på. Å lage leker av naturlige materialer kan være både morsomt og lærerikt for barna. En kreativ måte å gjøre dette på, er å bruke pinner og plast som kommer fra havet for å lage unike og interessante leker.",
+        },
+        { img: "!portfolio/img/plastikk fra havet.JPG" },
+        {
+          text: "Stranden er en flott kilde til materialer for å lage leker. Pinner som er funnet på stranden kan brukes til å lage alt fra sverd og stav til hus og figurer. Barna kan bruke sin fantasi og kreativitet for å lage unike leker som er inspirert av naturen. De kan også lære om forskjellige typer tre og hva de kan brukes til.",
+        },
+        {
+          text: "I tillegg til pinner kan også plast som kommer fra havet brukes til å lage leker. Plast som er funnet på stranden eller i havet kan vaskes og brukes til å lage morsomme og fargerike leker. Barna kan lære om resirkulering og hvor viktig det er å ta vare på miljøet. De kan også bruke sin fantasi til å lage nye og spennende leker som er laget av materialer som ellers ville ha blitt kastet.",
+        },
+        {
+          text: "I konklusjonen kan det påpekes at å lage leker av pinner og plast fra havet er en flott måte å engasjere barna i læring og kreativ utfoldelse. De kan lære om naturmaterialer og resirkulering, samtidig som de har det gøy med å lage unike og personlige leker. Prøv å inkludere denne aktiviteten i barnehagen for å gi barna en spennende og meningsfull opplevelse.",
+        },
       ],
       articleId: 1,
     },
@@ -96,47 +114,37 @@ const model = {
 
   courseStore: [
     {
-      title: "Kurs: ?",
-      img: "img/matte.png",
+      title: "Måling",
+      img: "img/pinne dyr.JPG",
       courseId: 0,
       price: 9600,
-      description: "Ekstremt bra kurs som du TRENGER",
-    },
-    {
-      title: "Kurs: ?",
-      img: "img/naturfag.png",
-      courseId: 1,
-      price: 8500,
-      description: "Ekstremt bra kurs som du ABSOLUTT TRENGER",
+      description: `
+      Matematikken i opplegget er måling. Vi lager et måleredskap av naturmaterialer og plastikk som vi finner på stranden eller i sjøen. Måleredskapet kan 
+      brukes til både direkte- og indirekte måling og projisert lek. Vi lager «pinnevenner»! Barna velger en pinne de vil lage pinnevennen av. Pinnevennen målet 
+      10 cm. Dette måler vi med målebånd, setter merke og sager. Pinnevennen får hår, nese og/eller hodeplagg av plastikk vi har sanket, vasket og sortert. Vi 
+      tegner på øyne. Munn får ikke pinnevennen. Det er fordi det er vi som er pinnevennens stemme og humør. Matematikk er overalt i alt vi gjør og 
+      pinnevennene kan være nøkkelen til god matematikkforståelse.
+      `,
     },
   ],
 
   // merchStore
   storeArticles: [
     {
-      title: "Hettegenser",
-      img: "img/renebeathe.jpg",
-      description: "dette er ett flott produkt..",
-      category: ["Hettegenser", "Klær"],
+      title: "Blomstrete kjole",
+      img: "img/blomstrete_kjole.jpg",
+      description:
+        "En vakker blomstrete kjole som passer til enhver anledning.",
+      category: ["Kjoler", "Klær"],
       colors: [
-        { text: "Svart", css: "black" },
         { text: "Rød", css: "red" },
-      ],
-      articleId: 0,
-      price: 3999,
-    },
-    {
-      title: "Hettegenser",
-      img: "img/renebeathe.jpg",
-      description: "dette er ett flott produkt..",
-      category: ["Hettegenser", "Klær"],
-      colors: [
-        { text: "Svart", css: "black" },
-        { text: "Rød", css: "red" },
+        { text: "Blå", css: "blue" },
+        { text: "Grønn", css: "green" },
       ],
       articleId: 1,
-      price: 3999,
+      price: 6999,
     },
+
     {
       title: "Hettegenser",
       img: "img/renebeathe.jpg",
@@ -190,6 +198,59 @@ const model = {
       ],
       articleId: 6,
       price: 1500,
+    },
+    {
+      title: "T-skjorte",
+      img: "img/t-skjorte.jpg",
+      description: "En komfortabel og stilfull t-skjorte i bomull.",
+      category: ["T-skjorter", "Klær"],
+      colors: [
+        { text: "Svart", css: "black" },
+        { text: "Hvit", css: "white" },
+        { text: "Gul", css: "yellow" },
+      ],
+      articleId: 7,
+      price: 2999,
+    },
+    {
+      title: "Hettegenser",
+      img: "img/hettegenser.jpg",
+      description: "En varm og komfortabel hettegenser i myk bomull.",
+      category: ["Hettegensere", "Klær"],
+      colors: [
+        { text: "Svart", css: "black" },
+        { text: "Grå", css: "gray" },
+        { text: "Blå", css: "blue" },
+      ],
+      articleId: 8,
+      price: 3999,
+    },
+    {
+      title: "Støvler",
+      img: "img/stovler.jpg",
+      description: "Vanntette støvler i gummi med godt grep.",
+      category: ["Skotøy"],
+      colors: [
+        { text: "Svart", css: "black" },
+        { text: "Grønn", css: "green" },
+        { text: "Blå", css: "blue" },
+      ],
+      articleId: 9,
+      price: 8999,
+    },
+    {
+      title: "Vindjakke",
+      img: "img/vindjakke.jpg",
+      description:
+        "En lett og pustende vindjakke som beskytter mot vind og regn.",
+      category: ["Jakker", "Klær"],
+      colors: [
+        { text: "Svart", css: "black" },
+        { text: "Rød", css: "red" },
+        { text: "Gul", css: "yellow" },
+      ],
+      articleId: 10,
+      price: 4999,
     },
   ],
 

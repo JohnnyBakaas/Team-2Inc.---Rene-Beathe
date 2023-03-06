@@ -1,22 +1,5 @@
 "use strict";
 
-const lorumIpsumGenerator = () => {
-  let theHTML = ``;
-  for (let i = 0; i <= 3; i++) {
-    theHTML += `Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. 
-Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, 
-qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. 
-Ut enim ad minima veniam, quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? [D]Quis autem vel eum i[r]ure reprehenderit, qui in ea 
-voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis 
-praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est 
-laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere 
-possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae 
-non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.`;
-  }
-  return theHTML;
-};
-
 const aboutMeView = () => {
   let theHTML =
     /*html*/
@@ -24,9 +7,19 @@ const aboutMeView = () => {
 <section>
 <img src="img/aImage.png" alt="aImage">
 <h2>Om Meg:</h2>
-<p>${lorumIpsumGenerator()}</p>
+<p>${aboutMeText()}</p>
 </section>
 
 `;
   return theHTML;
+};
+
+const aboutMeText = () => {
+  return `
+  <p>René Beathe er en kreativ og engasjerende person som har funnet sin lidenskap for å inspirere barn til å lære om realfag på en morsom og underholdende måte. Hennes arbeid som barnegage-forfatter med fokus på realfag har vist seg å være en suksess blant både barn og foreldre.</p>
+  <p>René Beathe er en person som brenner for å vise barna at realfag ikke trenger å være kjedelig eller vanskelig. Gjennom hennes kreative tilnærming har hun klart å få barna interessert i realfag, og hun gjør det på en måte som er både spennende og utfordrende. Med sin brede kunnskap om realfag, er René Beathe i stand til å utvikle læringsopplevelser som er tilpasset barnas nivå og interesser.</p>
+  <p>René Beathe mener at det å lære realfag på en kreativ måte kan gi barna en mye dypere forståelse for emnet, samtidig som det øker deres interesse og motivasjon for å lære mer. Hun har utviklet en rekke innovative aktiviteter som inkluderer eksperimenter, spill og konkurranser, som har vist seg å være svært populære blant barna.</p>
+  <p>En av René Beathe sine største styrker er hennes evne til å skape en trygg og støttende læringsmiljø for barna. Hun er flink til å kommunisere med barna på deres nivå, og gjør det lett for dem å forstå de komplekse konseptene som realfag inneholder. René Beathe har også en naturlig evne til å motivere barna, og hun har en positiv og oppmuntrende tilnærming som inspirerer dem til å jobbe hardt og nå sine mål.</p>
+  <p>Takket være René Beathe sin innsats og engasjement, har mange barn fått en ny interesse for realfag, og de ser nå på det som noe morsomt og spennende. René Beathe har vist at det er mulig å lære realfag på en kreativ og underholdende måte, og hennes arbeid har åpnet dørene for mange barn som tidligere har vært skeptiske til realfag.</p>
+    `;
 };

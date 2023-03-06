@@ -35,7 +35,7 @@ const makeHomePage = () => {
             <div class="post-it-note note5" onclick="changeCurrentPage('ecommerceCollectionView')">
                 <h2> Merch </h2>
                 <p> text content </p>
-                <img class="notePicture" src="img/shopStickman.svg"/>
+                <img class="notePicture" style="width:60%;" src="img/lil man.svg"/>
             </div>
 
             <div class="post-it-note note4" onclick="changeCurrentPage('aboutMeView')">
