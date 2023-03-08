@@ -3,15 +3,6 @@ const goToCheckout = () => {
   model.app.state = `storeCheckoutView`;
   view();
 };
-const modalThingy = () => {
-  let modal = document.getElementsByClassName("myModal");
-
-  if (modal[0].style.display === "none") {
-    modal[0].style.display = "flex";
-  } else {
-    modal[0].style.display = "none";
-  }
-};
 
 const pay = () => {
   let modal = document.getElementsByClassName("myModal");
@@ -28,20 +19,15 @@ const pay = () => {
   } else {
     modal[1].style.display = "none";
   }
+  // Legg til nytt view her
+
+  changeCurrentPage("takkForHandelView");
 };
 // window.addEventListener("click") = () => {
 //   let modal = document.getElementsByClassName("myModal");
 //   if(EventTarget === modal) {
 //     modal.style.display = "none";
 //   }
-window.onclick = (event) => {
-  let modal = document.getElementsByClassName("myModal");
-  if (event.target === modal[0]) {
-    modal[0].style.display = "none";
-  } else if (event.target === modal[1]) {
-    modal[1].style.display = "none";
-  }
-};
 
 const submitCheckout = (e) => {
   let form = document.querySelector(".myForm");
@@ -87,7 +73,9 @@ const submitCheckout = (e) => {
     userinfo: userInfo,
   };
   model.users[user].storeOrders.push(fin);
-  pay();
+  model.users[user].shoppingCart = [];
+  view();
+  modalThingy("thanks");
 };
 
 const currentDate = () => {

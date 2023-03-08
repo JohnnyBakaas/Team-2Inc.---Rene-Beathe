@@ -46,7 +46,14 @@
   cursor: pointer;
   border: 5px solid black;
 }
-
+.noHover:hover {
+  cursor: auto !important;
+  border: 5px solid var(--secondaryColor) !important;
+}
+.noHover:hover .course-img {
+  border: 5px solid var(--secondaryColor) !important;
+  cursor: auto !important;
+}
 .course-article-layout h3 {
   font-size: 23px;
   margin: 15px 0 7px 0;

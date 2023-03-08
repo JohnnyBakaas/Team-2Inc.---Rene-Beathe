@@ -10,6 +10,10 @@ const ecommerceColectionView = () => {
         ${makeStoreArticles()}
       </article>
     </section>
+ 
+    ${loginModal()}
+  ${registerModal()}
+
     `;
 
   return theHTML;
@@ -29,7 +33,7 @@ const makeStoreNavbar = () => {
             : `
       <div style=" width: 30%"></div>
       <div style=" width: 30%"></div>
-      <button onclick="changeCurrentPage('loginView')"> Logg inn </button>
+      <button onclick="modalThingy(), modalAdjustments()"> Logg inn </button>
       `
         }
       </nav>
@@ -85,4 +89,11 @@ const makeStoreFilters = () => {
     });
   });
   return filters;
+};
+const modalAdjustments = () => {
+  let modal = document.querySelector(".myModal");
+  let div = modal.querySelector(":scope > div");
+  div.style.animationName = "login";
+  div.style.height = "35vh";
+  div.style.width = "30%";
 };

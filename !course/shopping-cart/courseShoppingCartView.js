@@ -33,14 +33,12 @@ function courseShoppingCart() {
   let html = "";
   for (let i = 0; i < user.courseShoppingCart.length; i++) {
     html += `
-    <article class="course-article-layout">
+    <article class="course-article-layout noHover">
 
         <img class="course-img" src="${user.courseShoppingCart[i].img}">
         <h3>${user.courseShoppingCart[i].title}</h3>
         <div>${user.courseShoppingCart[i].price}kr</div>
-        <div onclick="removeCourseFromShoppingCart(${user.courseShoppingCart[i].courseId})">
-          FJERN
-        </div>
+<button class="pay" onclick="removeCourseFromShoppingCart(${user.courseShoppingCart[i].courseId})">Fjern</button>
 
     </article>
     `;

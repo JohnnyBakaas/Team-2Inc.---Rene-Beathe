@@ -3,33 +3,42 @@
   flex-direction: column;
 }
 
-.booking-info {
+.booking div.booking-info {
+  margin-top: 20px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
-.booking-info p {
-  padding-left: 20px;
-  margin: 0;
-  width: 300px;
-  white-space: none;
-}
-
-.booking-bilde {
-  display: flex;
-  width: 800px;
-  min-width: 150px;
-  height: 400px;
+.booking div.booking-info div.booking-bilde {
   background-image: url("img/renebeathe.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  width: 53%;
+  background-position: center 37%;
+  margin-bottom: 16px;
+  border: 4px solid black;
 }
+
+.booking div.booking-info div.booking-text {
+  background-color: #f0f0f0;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 16px;
+  width: 33%;
+}
+
+.booking div.booking-info div.booking-text p {
+  word-spacing: 1px;
+}
+
+/* Forum og kalender*/
 
 .booking-contact {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 70em;
+
   justify-content: center;
   margin-bottom: 20px;
 }
@@ -154,34 +163,25 @@
 }
 
 @media (max-width: 660px) {
-  .booking-bilde {
-    width: 100%;
-  }
-  .booking-info {
+  .booking div.booking-info {
     flex-direction: column;
     align-items: center;
-    margin: 20px;
   }
 
-  .booking-info p {
-    flex-direction: column;
-    padding: 20px;
-    border-bottom: 1px solid black;
-    width: 100%;
+  .booking div.booking-info div.booking-bilde {
+    width: 90%;
+    height: 50vh;
   }
 
-  .booking-moreinfo {
-    padding: 20px;
+  .booking div.booking-info div.booking-text {
+    background-color: #ffffff00;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 16px;
+    width: 90%;
   }
 
-  .booking-moreinfo p {
-    margin: 0;
-    width: 100%;
-  }
-
-  .booking-contact {
-  }
-
+  /* Forum og kalender*/
   .booking-contactform {
     display: flex;
     flex-direction: column;

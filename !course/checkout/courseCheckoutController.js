@@ -34,8 +34,7 @@ function completePayment() {
       return console.log("FEIL: Alle felt må være fylt ut.");
     }
   }
-  console.log("...");
-  setTimeout(() => console.log("Takk for handelen."), 3000);
+  modalThingy();
 }
 
 // Legge til funksjoner som sjekker f.eks at "@" er i emailen osv...

@@ -3,28 +3,29 @@ const bookingView = () => {
     <div class="booking">
       <div class="booking-info">
         <div class="booking-bilde"></div>
-        <p>
-          Bli med på vårt spennende seminar om kreativ bruk av realfag!
-          <br>
-          <br>
-          Er du interessert i å lære mer om hvordan du kan bruke realfag på en kreativ måte? Ønsker du å lære hvordan du kan engasjere barn og unge i realfag på en morsom og interaktiv måte? Hvis svaret er ja, da er vårt seminar perfekt for deg!
-          <br>
-          <br>
-          Vårt seminar om kreativ bruk av realfag vil gi deg en dypere forståelse av hvordan du kan bruke realfag i undervisningen, lek og kreativ utfoldelse. Gjennom interaktive diskusjoner, case-studier og praktiske øvelser vil du lære om de nyeste trendene, utfordringene og løsningene på dette spennende feltet.
-          <br>
-          <br>
-          Vårt seminar er utviklet av et team av eksperter på kreativ bruk av realfag og er tilpasset for å møte behovene til deltakerne. Uansett om du er en lærer, en forelder eller en annen type profesjonell som jobber med barn og unge, vil vårt seminar gi deg praktiske verktøy og teknikker som du kan bruke umiddelbart.
-          <br>
-          <br>
-          Påmelding til vårt seminar er enkelt og raskt. Bare fyll ut skjemaet på vår nettside og du vil motta en bekreftelse på e-post. Vårt seminar vil bli avholdt på [sted og dato], så ikke gå glipp av denne fantastiske muligheten til å lære mer om kreativ bruk av realfag!
-          <br>
-          <br>
-          Hvis du har spørsmål eller trenger mer informasjon, er du velkommen til å kontakte oss. Vi ser frem til å se deg på vårt seminar!
-        </p>
+        <div class="booking-text">
+        
+          <h2>
+            Bli med på vårt spennende seminar om kreativ bruk av realfag!
+          </h2>
+          <p>
+            Er du interessert i å lære mer om hvordan du kan bruke realfag på en kreativ måte? Ønsker du å lære hvordan du kan engasjere barn og unge i realfag på en morsom og interaktiv måte? Hvis svaret er ja, da er vårt seminar perfekt for deg!
+            <br>
+            <br>
+            Vårt seminar om kreativ bruk av realfag vil gi deg en dypere forståelse av hvordan du kan bruke realfag i undervisningen, lek og kreativ utfoldelse. Gjennom interaktive diskusjoner, case-studier og praktiske øvelser vil du lære om de nyeste trendene, utfordringene og løsningene på dette spennende feltet.
+            <br>
+            <br>
+            Vårt seminar er utviklet av et team av eksperter på kreativ bruk av realfag og er tilpasset for å møte behovene til deltakerne. Uansett om du er en lærer, en forelder eller en annen type profesjonell som jobber med barn og unge, vil vårt seminar gi deg praktiske verktøy og teknikker som du kan bruke umiddelbart.
+            <br>
+            <br>
+            Påmelding til vårt seminar er enkelt og raskt. Bare fyll ut skjemaet på vår nettside og du vil motta en bekreftelse på e-post. Vårt seminar vil bli avholdt på [sted og dato], så ikke gå glipp av denne fantastiske muligheten til å lære mer om kreativ bruk av realfag!
+            <br>
+            <br>
+            Hvis du har spørsmål eller trenger mer informasjon, er du velkommen til å kontakte oss. Vi ser frem til å se deg på vårt seminar!
+          </p>
+        </div>
       </div>
-      <div class="booking-moreinfo">
-          <p>For mer informasjon om booking kan du ta kontakt på mail: rene.hansen@larvik.kommune.no eller se på kalenderen under for å se når jeg er ledig.</p>
-      </div>
+      
       
       <div class="booking-contact">
            <div id="calenderDiv">
@@ -349,5 +350,5 @@ const removeContactForm = (element) => {
   }
 
   element.style.backgroundColor = "red";
-  element.innerHTML = "Va tar kontak snarest";
+  element.innerHTML = "Vi tar kontakt snarest";
 };

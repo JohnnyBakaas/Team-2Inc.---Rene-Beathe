@@ -23,7 +23,6 @@ TODO
 bilder på merch
 bilder på kurs
 portefolie data
-- Lage en `"'takk for handelen'"` side til kurs og merch.
 - Legge til logg ut/logg inn knapp på kurs.
 HELE OM MEG
 Send footer til bunn av siden
@@ -35,5 +34,7 @@ gå gjennom modell
 registrer bruker greier
 
 Fiks login CSS
+
+
 
 ----------------------------------------------------------

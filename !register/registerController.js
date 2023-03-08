@@ -44,3 +44,36 @@ const clearRegister = () => {
   /*return model.inputs.registration.forEach(() =>
         model.inputs.registration.set("");*/
 };
+
+const newRegistration = () => {
+  let form = document.getElementsByClassName("myForm");
+  let isfilled = true;
+
+  Array.from(form[1].elements).forEach((e) => {
+    if (e.value === ``) {
+      isfilled = false;
+    }
+  });
+  if (!isfilled) {
+    return;
+  } else {
+    let newUser = {
+      name: `${form[1].name.value}`,
+      lastName: `${form[1].surName.value}`,
+      username: `${form[1].username.value}`,
+      userId: findLastUserId(),
+      password: `${form[1].password.value}`,
+      mail: `${form[1].email.value}`,
+      address: `${form[1].address.value}`,
+      zipcode: `${form[1].zip.value}`,
+      shoppingCart: [],
+      storeOrders: [],
+      courseShoppingCart: [],
+      courseOrders: [],
+    };
+
+    model.users.push(newUser);
+    model.app.currentUser = newUser.userId;
+    view();
+  }
+};

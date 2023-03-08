@@ -5,19 +5,20 @@
   background-color: rgba(76, 62, 62, 0.6);
   top: -0px;
   justify-content: center;
+  display: flex;
 }
 .myModal div:first-child {
   margin: 15%;
   background-color: var(--tetriaryColor);
   height: 56vh;
   width: 60%;
-  top: 200px;
   flex-direction: column;
   text-align: center;
   border: solid 6px black;
   animation-name: myModalAnimation;
   animation-duration: 0.3s;
   animation-iteration-count: 1;
+  position: relative;
 }
 .myModal div header {
   justify-content: center;
@@ -42,7 +43,31 @@
   cursor: pointer;
 }
 .myModal div footer {
-  padding: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.myModal div img {
+  width: 400px;
+  height: 400px;
+}
+.myModal div p:first-child {
+  background-image: url("../img/renebeathe.jpg");
+  height: 400px;
+  width: 50%px;
+  background-position: center;
+  background-position: 50%;
+  border: 4px solid black;
+}
+
+.thanksForPurchase {
+  padding: 30px;
+  border: solid 5px black;
+  max-height: 583px;
+  max-width: 580px;
+  background-color: var(--primaryColor) !important;
 }
 @keyframes myModalAnimation {
   0% {
@@ -107,17 +132,17 @@
 @media (max-width: 630px) {
   .myModal div footer {
     flex-direction: row;
-    padding: 35px;
   }
   .myModal div:first-child {
-    height: 58%;
   }
 }
-@media (max-width: 310px) {
+@media (max-height: 940px) {
   .myModal div:first-child {
-    height: 58%;
+    height: 65vh;
   }
-  .myModal div footer {
-    padding: 25px;
+}
+@media (max-height: 720px) {
+  .myModal div:first-child {
+    height: 75vh;
   }
 }

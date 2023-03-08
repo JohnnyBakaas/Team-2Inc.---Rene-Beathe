@@ -4,10 +4,14 @@ const aboutMeView = () => {
   let theHTML =
     /*html*/
     `
-<section>
-<img src="img/aImage.png" alt="aImage">
+<section class="aboout_me">
+<div class="about_me_image">
+</div>
+<div class="container">
 <h2>Om Meg:</h2>
 <p>${aboutMeText()}</p>
+</div>
+
 </section>
 
 `;

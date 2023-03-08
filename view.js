@@ -52,6 +52,9 @@ const view = () => {
     case "courseArticleView":
       htmlOut += courseArticleView();
       break;
+    case "takkForHandelView":
+      htmlOut += takkForHandelView();
+      break;
   }
 
   htmlOut += makeFooter();

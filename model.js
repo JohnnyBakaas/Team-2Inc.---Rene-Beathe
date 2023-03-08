@@ -119,11 +119,37 @@ const model = {
       courseId: 0,
       price: 9600,
       description: `
-      Matematikken i opplegget er måling. Vi lager et måleredskap av naturmaterialer og plastikk som vi finner på stranden eller i sjøen. Måleredskapet kan 
-      brukes til både direkte- og indirekte måling og projisert lek. Vi lager «pinnevenner»! Barna velger en pinne de vil lage pinnevennen av. Pinnevennen målet 
-      10 cm. Dette måler vi med målebånd, setter merke og sager. Pinnevennen får hår, nese og/eller hodeplagg av plastikk vi har sanket, vasket og sortert. Vi 
-      tegner på øyne. Munn får ikke pinnevennen. Det er fordi det er vi som er pinnevennens stemme og humør. Matematikk er overalt i alt vi gjør og 
+      Matematikken i opplegget er måling. Vi lager et måleredskap 
+      av naturmaterialer og plastikk som vi finner på stranden 
+      eller i sjøen. Måleredskapet kan brukes til både direkte- 
+      og indirekte måling og projisert lek. Vi lager «pinnevenner»! 
+      Barna velger en pinne de vil lage pinnevennen av. Pinnevennen målet 
+      10 cm. Dette måler vi med målebånd, setter merke og sager. 
+      Pinnevennen får hår, nese og/eller hodeplagg av plastikk vi 
+      har sanket, vasket og sortert. Vi tegner på øyne. Munn får 
+      ikke pinnevennen. Det er fordi det er vi som er pinnevennens 
+      stemme og humør. Matematikk er overalt i alt vi gjør og 
       pinnevennene kan være nøkkelen til god matematikkforståelse.
+      `,
+    },
+    {
+      title: "Bygge en mur",
+      img: "img/flaske vegg.JPG",
+      courseId: 1,
+      price: 9600,
+      description: `
+      Naturfag som er lett å relatere til. I dette kurset lærer 
+      jeg deg hvordan du tar klassen med på å bygge en mur med 
+      gjenstander vi finner i naturen. Vi starter med å finne 
+      passende steiner og flasker som vi kan bruke til å lage 
+      fundamentet for muren. Deretter bygger vi muren lag for 
+      lag, og lærer om forskjellige teknikker og materialer vi 
+      kan bruke for å sikre at muren blir stabil og holdbar. Vi 
+      diskuterer også hvordan vi kan bruke disse teknikkene til 
+      å bygge andre strukturer i naturen, som steingjerder, 
+      trapper og hagebenker. Dette kurset gir elevene en dyp 
+      forståelse av naturfag og håndverk, samtidig som de får 
+      være kreative og utforske naturen på en ny og spennende måte.
       `,
     },
   ],
@@ -132,7 +158,7 @@ const model = {
   storeArticles: [
     {
       title: "Blomstrete kjole",
-      img: "img/blomstrete_kjole.jpg",
+      img: "!ecommerce/img/Blomstrete kjole.jpg",
       description:
         "En vakker blomstrete kjole som passer til enhver anledning.",
       category: ["Kjoler", "Klær"],
@@ -147,7 +173,7 @@ const model = {
 
     {
       title: "Hettegenser",
-      img: "img/renebeathe.jpg",
+      img: "!ecommerce/img/Harlem-hettegenser-gra.jpg",
       description: "dette er ett flott produkt..",
       category: ["Hettegenser", "Klær"],
       colors: [
@@ -159,7 +185,7 @@ const model = {
     },
     {
       title: "Sko",
-      img: "img/renebeathe.jpg",
+      img: "!ecommerce/img/sko.JPG",
       description: "dette er ett flott produkt..",
       category: ["Sko", "Klær"],
       colors: [
@@ -171,7 +197,7 @@ const model = {
     },
     {
       title: "Hjemmelaget Choco Kake",
-      img: "img/renebeathe.jpg",
+      img: "!ecommerce/img/Choco Kake.jpg",
       description: "dette er ett flott produkt..",
       category: ["Kake", "Matt"],
 
@@ -180,7 +206,7 @@ const model = {
     },
     {
       title: "Brownies",
-      img: "img/renebeathe.jpg",
+      img: "!ecommerce/img/Brownies.JPG",
       description: "dette er ett flott produkt..",
       category: ["Kake", "Matt"],
 
@@ -189,19 +215,20 @@ const model = {
     },
     {
       title: "Realfag Juice",
-      img: "img/renebeathe.jpg",
+      img: "!ecommerce/img/Realfag Juic.jpg",
       description: "dette er ett flott produkt..",
       category: ["Drikke", "Matt"],
       colors: [
         { text: "Grøn", css: "Green" },
-        { text: "Lila", css: "Purple" },
+        { text: "Gul", css: "#f8ff00" },
+        { text: "Rød", css: "Red" },
       ],
       articleId: 6,
       price: 1500,
     },
     {
       title: "T-skjorte",
-      img: "img/t-skjorte.jpg",
+      img: "!ecommerce/img/T-skjorte.jpg",
       description: "En komfortabel og stilfull t-skjorte i bomull.",
       category: ["T-skjorter", "Klær"],
       colors: [
@@ -212,22 +239,10 @@ const model = {
       articleId: 7,
       price: 2999,
     },
-    {
-      title: "Hettegenser",
-      img: "img/hettegenser.jpg",
-      description: "En varm og komfortabel hettegenser i myk bomull.",
-      category: ["Hettegensere", "Klær"],
-      colors: [
-        { text: "Svart", css: "black" },
-        { text: "Grå", css: "gray" },
-        { text: "Blå", css: "blue" },
-      ],
-      articleId: 8,
-      price: 3999,
-    },
+    ,
     {
       title: "Støvler",
-      img: "img/stovler.jpg",
+      img: "!ecommerce/img/Støvler.JPG",
       description: "Vanntette støvler i gummi med godt grep.",
       category: ["Skotøy"],
       colors: [
@@ -240,7 +255,7 @@ const model = {
     },
     {
       title: "Vindjakke",
-      img: "img/vindjakke.jpg",
+      img: "!ecommerce/img/Vindjakke.jpg",
       description:
         "En lett og pustende vindjakke som beskytter mot vind og regn.",
       category: ["Jakker", "Klær"],
@@ -256,20 +271,26 @@ const model = {
 
   users: [
     {
-      name: "a",
-      lastName: "Pizzason",
-      username: "HeinePizzason",
+      name: "User",
+      lastName: "Usersen",
+      username: "User",
       userId: 1,
-      password: "1",
-      mail: "superCool@hotmail.com",
-      address: "someWhereLane",
+      password: "user",
+      mail: "user@uesr.com",
+      address: "User Will",
       zipcode: "3870",
       shoppingCart: [],
       storeOrders: [
         {
           orderDate: "18.01.2023",
           orderNum: 0,
-          articleIds: [0, 2],
+          articleIds: [
+            {
+              articleId: 1,
+              color: ["Rød", "red"],
+              quantity: 1,
+            },
+          ],
           totalPrice: 1000,
         },
       ],
@@ -287,6 +308,24 @@ const model = {
     },
     {
       days: ["4.3.2023", "12.3.2023", "20.3.2023", "19.3.2023", "24.3.2023"],
+    },
+    {
+      days: ["3.4.2023", "6.4.2023", "9.4.2023", "12.4.2023", "15.4.2023"],
+    },
+    {
+      days: ["5.5.2023", "10.5.2023", "15.5.2023", "20.5.2023", "25.5.2023"],
+    },
+    {
+      days: ["5.6.2023", "8.6.2023", "12.6.2023", "18.6.2023"],
+    },
+    {
+      days: ["1.7.2023", "5.7.2023", "9.7.2023", "13.7.2023"],
+    },
+    {
+      days: ["21.8.2023", "25.8.2023", "29.8.2023", "2.9.2023"],
+    },
+    {
+      days: ["11.10.2023", "15.10.2023", "19.10.2023", "23.10.2023"],
     },
   ],
 };

@@ -5,8 +5,10 @@ const portfolioColectionView = () => {
       <article class="portfolioArticl" 
       onclick="selectPortfolioArticle(${p.articleId})">
         <h2> ${p.title} </h2>
-        <img src="${p.img}" alt="${p.img}">
-        <p> ${findFirstText(p.content)} </p>
+        <div>
+          <img src="${p.img}" alt="${p.img}">
+          <p> ${findFirstText(p.content)} </p>
+        </div>
       </article>
     `;
   });

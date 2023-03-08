@@ -22,15 +22,18 @@ function yourStoreOrders() {
   });
 
   let html = "";
+  let quantity = 0;
   for (let i = 0; i < model.users[userIdIndex].storeOrders.length; i++) {
     const storeOrders = model.users[userIdIndex].storeOrders;
-
+    for (let j = 0; j < storeOrders[i].articleIds.length; j++) {
+      quantity += storeOrders[i].articleIds[j].quantity;
+    }
     html += `
     <span>Dato: ${storeOrders[i].orderDate}</span>
 
     <span>Ordrenummer: ${storeOrders[i].orderNum}</span>
 
-    <span>Artikkelnummer: ${storeOrders[i].articleIds.join(", ")}</span>
+    <span>Antall Produkter: ${quantity}</span>
 
     <span>Total pris: ${storeOrders[i].totalPrice}</span>
     `;

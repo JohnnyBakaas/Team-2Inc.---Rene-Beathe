@@ -46,5 +46,6 @@ function courseCheckoutView() {
       <button onclick="completePayment()">FULLFØR BETALING</button>
     </div>
   </section>
+  ${thanksForPurchase(true)}
   `;
 }
