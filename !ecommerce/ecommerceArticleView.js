@@ -45,7 +45,7 @@ const makeColorSelection = (colors) => {
   let theHTML = "";
   colors.forEach((e) => {
     theHTML += `
-    <button class="storeColorSelection" onclick="shoppingCartColor('${e.text}', '${e.css}')">
+    <button class="storeColorSelection" onclick="shoppingCartColor('${e.text}', '${e.css}'); changeBorderSelected(this, '${e.css}')">
       <p>${e.text}</p>
       <div style="background-color:${e.css};" 
         class="storeColorSelectionSquare">
@@ -54,4 +54,16 @@ const makeColorSelection = (colors) => {
     `;
   });
   return theHTML;
+};
+
+const changeBorderSelected = (element, color) => {
+  for (
+    let i = 0;
+    i < document.getElementsByClassName("storeColorSelection").length;
+    i++
+  ) {
+    document.getElementsByClassName("storeColorSelection")[i].style.border =
+      "revert";
+  }
+  element.style.border = `solid ${color} 2px`;
 };
